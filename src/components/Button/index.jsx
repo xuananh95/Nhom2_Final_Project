@@ -11,7 +11,7 @@ const Button = ({ text }) => {
 
 export default Button
 
-const SButton = styled.button`
+export const SButton = styled.button`
     width: 80px;
     height: 30px;
     display: flex;
@@ -20,6 +20,8 @@ const SButton = styled.button`
     cursor: pointer;
     color: white;
     border: none;
-    background-color: bisque;
+    background-color: #1b77f0;
     border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
 `;

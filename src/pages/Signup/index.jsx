@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Input from '../../components/Input';
 import { toast } from 'react-toastify';
 import Button from '../../components/Button';
+import { v4 as uuidv4 } from 'uuid';
 
 const initialValue = {
     name: '',
@@ -16,6 +17,14 @@ const Signup = () => {
     const { username, password, confirmation } = user;
     const navigate = useNavigate();
 
+    useEffect(() => {
+        const current = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')) : null;
+        if(current){
+            navigate("../", {replace: true});
+            toast.error('You"re already logged in!');
+        }
+    })
+
     const handleRegister = (e) => {
         e.preventDefault();
         if (!username || !password || !confirmation) {
@@ -27,11 +36,16 @@ const Signup = () => {
             return;
         }
         const users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
-        const id = new Date();
+        const id = uuidv4();
         const newUser = {
             username,
             password,
-            id
+            id,
+            isAdmin: false,
+            phone: '',
+            address: '',
+            gender: '',
+            dob: '',
         }
         localStorage.setItem('users', JSON.stringify([...users, newUser]));
         toast.success('Register successful');
@@ -57,8 +71,9 @@ const Signup = () => {
 export default Signup
 
 export const SForm = styled.form`
-width: 100%;
-    max-width: 600px;
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
     margin: 0 auto;
     padding: 10px 20px;
     border-radius: 5px;
@@ -66,11 +81,11 @@ width: 100%;
     
     .text{
         text-align: center;
-        color: green;
+        color: black;
     }
     .button-group{
         display: flex;
         justify-content: center;
-        margin-top: 10px;
+        margin-top: 20px;
     }
 `;

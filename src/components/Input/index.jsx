@@ -16,12 +16,12 @@ export default Input
 const SInput = styled.div`
     margin: 5px 0;
     label {
-        color: gray;
+        color: black;
     }
     input{ 
         border: none;
-        background-color: #81d3ec;
-        color: gray;
+        background-color: #4ca3f5;
+        color: white;
         outline: none;
         padding: 15px;
         border-radius: 5px;
