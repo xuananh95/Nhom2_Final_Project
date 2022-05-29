@@ -1,0 +1,92 @@
+.header {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 80px;
+    background-color: rgb(50, 50, 50);
+}
+
+.header-units {
+    padding: 0px 25px;
+    min-width: fit-content;
+}
+
+.header-logo > a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 27px;
+}
+
+.header-menu {
+    cursor: pointer;
+    position: relative;
+    padding: 20px;
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: auto;
+    left: 20px;
+    background-color: whitesmoke;
+    display: none;
+    flex-direction: column;
+    width: 100px;
+    height: fit-content;
+    padding: 20px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(50, 50, 50);
+    gap: 5px;
+}
+
+.header-menu:hover > .dropdown-menu {
+    display: flex;
+}
+
+.header-search {
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    color: white;
+}
+
+.header-search > form > input {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 7px;
+    min-width: 300px;
+}
+
+.header-search > form > button {
+    color: white;
+    background-color: rgb(89, 141, 142);
+    margin: 5px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.header-account {
+    display: flex;
+    gap: 20px;
+}
+
+.header-account > a {
+    text-decoration: none;
+    color: white;
+}
+
+.account-link {
+    padding: 10px 20px;
+}
+
+.sign-up-link {
+    background-color: rgb(89, 141, 142);
+    border-radius: 10px;
+}
