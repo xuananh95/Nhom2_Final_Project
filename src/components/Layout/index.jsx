@@ -5,19 +5,11 @@ import styled from 'styled-components'
 
 const Layout = ({children}) => {
   return (
-<<<<<<< Updated upstream
-    <div>
-        <Header />
-        {children}
-        <Footer />
-    </div>
-=======
     <SLayout>
       <Header />
       {children}
       <Footer />
     </SLayout>
->>>>>>> Stashed changes
   )
 }
 

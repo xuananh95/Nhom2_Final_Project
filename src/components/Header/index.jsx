@@ -1,18 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './styles.css'
-<<<<<<< Updated upstream
-import { useState } from 'react'
-
-
-const Header = () => {
-  const [searchDisplay, setSearchDisplay] = useState(false)
-=======
 import { toast } from 'react-toastify';
 import {BsSearch} from 'react-icons/bs'
 import {MdExpandMore} from 'react-icons/md'
 import {IoCloseSharp} from 'react-icons/io5'
-
 
 const Header = () => {
   const [searchDisplay, setSearchDisplay] = useState(false);
@@ -34,7 +26,6 @@ const Header = () => {
     navigate('../sign-in', {replace: true});
     toast.success('Log out successful!');
   }
->>>>>>> Stashed changes
 
   return (
     <div className='header'>
@@ -56,13 +47,6 @@ const Header = () => {
           </form>)}
         </div>
         <div style={{width: '100%'}}> </div>
-<<<<<<< Updated upstream
-        <div className='header-account header-units'>
-          <Link to='' className='sign-in-link account-link'>Sign In</Link>
-          <Link to='' className='sign-up-link account-link'>Sign Up</Link>
-        </div>
-=======
-
         {currentUser ? (
           <div className="header-account header-units">
             {(currentUser.isAdmin && (
@@ -75,14 +59,13 @@ const Header = () => {
             </NavLink>
             <button onClick={handleLogout}>Logout</button>
           </div>
-      ) : ( 
-        <div className="header-account header-units">
-              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-up" className='account-link'>Sign up</NavLink>
-              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-in" className='account-link sign-up-link'>Sign in</NavLink>
-        </div>      
-      ) 
+        ) : ( 
+          <div className="header-account header-units">
+            <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-up" className='account-link'>Sign up</NavLink>
+            <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-in" className='account-link sign-up-link'>Sign in</NavLink>
+          </div>      
+        ) 
       }
->>>>>>> Stashed changes
     </div>
   )
 }
