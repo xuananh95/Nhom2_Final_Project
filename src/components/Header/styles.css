@@ -90,3 +90,13 @@
     background-color: rgb(89, 141, 142);
     border-radius: 10px;
 }
+.options{
+    display: flex;
+    flex-direction: row;
+}
+.options a {
+    width: 60px;
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
