@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div style={{border: '1px solid black', position: 'fixed', bottom: 0, width: '100%'}}>
+    <div style={{border: '1px solid black', position: 'fixed', bottom: 0, width: '100%', backgroundColor: "white", color:"black"}}>
       <h1>Footer</h1>
     </div>
   )

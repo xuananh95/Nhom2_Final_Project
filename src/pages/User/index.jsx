@@ -81,14 +81,16 @@ export default User
 
 const SUser = styled.div`
     margin: 0 auto;
+    margin-top: 20px;
     width: 100%;
     max-width: 700px;
     background-color: white;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     color: black;
+    border-radius: 5px;
     .picture{
         flex: 1;
         text-align: center;

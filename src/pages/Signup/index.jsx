@@ -75,6 +75,7 @@ export const SForm = styled.form`
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+    margin-top: 20px;
     padding: 10px 20px;
     border-radius: 5px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;

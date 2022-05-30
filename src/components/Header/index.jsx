@@ -26,7 +26,7 @@ const Header = () => {
   }
 
   return (
-    <div style={{border: "1px solid black"}}>
+    <div style={{border: "1px solid black", backgroundColor: "white", color: "black"}}>
       <h1>Header</h1>
       {currentUser ? (
           <div className="options">
