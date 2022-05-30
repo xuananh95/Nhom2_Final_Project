@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useEffect, useState} from 'react'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import './styles.css'
 import { toast } from 'react-toastify';
 import {BsSearch} from 'react-icons/bs'
@@ -11,6 +11,7 @@ const Header = () => {
 
   let activeStyle = {
     color: "rgb(255, 107, 77)",
+
   }
   const [currentUser, setCurrentUser] = useState(null);
   const navigate = useNavigate();
