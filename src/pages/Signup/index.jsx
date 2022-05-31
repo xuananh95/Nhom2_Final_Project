@@ -78,7 +78,7 @@ export const SForm = styled.form`
     margin-top: 20px;
     padding: 10px 20px;
     border-radius: 5px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
     
     .text{
         text-align: center;
