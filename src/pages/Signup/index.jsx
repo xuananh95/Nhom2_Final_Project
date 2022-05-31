@@ -21,18 +21,18 @@ const Signup = () => {
         const current = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')) : null;
         if(current){
             navigate("../", {replace: true});
-            toast.error('You"re already logged in!');
+            toast.error('Bạn đã đăng nhập!');
         }
     })
 
     const handleRegister = (e) => {
         e.preventDefault();
         if (!username || !password || !confirmation) {
-            toast.error('Fill all the fields!');
+            toast.error('Hãy điền vào tất cả các ô!');
             return;
         }
         if (password !== confirmation) {
-            toast.error('Re check password!');
+            toast.error('Thông tin đăng nhập không đúng!');
             return;
         }
         const users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
@@ -48,7 +48,7 @@ const Signup = () => {
             dob: '',
         }
         localStorage.setItem('users', JSON.stringify([...users, newUser]));
-        toast.success('Register successful');
+        toast.success('Đăng ký tài khoản thành công!');
         navigate('../sign-in', { replace: true });
     }
 
@@ -57,12 +57,12 @@ const Signup = () => {
     return (
         <SForm onSubmit={handleRegister}>
             <h1 className="text">Register</h1>
-            <Input label="Username" value={username} onChange={(e) => setUser({ ...user, username: e.target.value })} />
-            <Input label="Password" value={password} onChange={(e) => setUser({ ...user, password: e.target.value })} />
-            <Input label="Re-enter password" value={confirmation} onChange={(e) => setUser({ ...user, confirmation: e.target.value })} />
-            <Link to="/sign-in">Already have an account? Sign in</Link>
+            <Input label="Tên đăng nhập" value={username} onChange={(e) => setUser({ ...user, username: e.target.value })} />
+            <Input label="Mật khẩu" value={password} onChange={(e) => setUser({ ...user, password: e.target.value })} inputType="password" />
+            <Input label="Xác nhận mật khẩu" value={confirmation} onChange={(e) => setUser({ ...user, confirmation: e.target.value })} inputType="password" />
+            <Link to="/sign-in">Bạn đã có tài khoản? Đăng nhập ngay!</Link>
             <div className="button-group">
-                <Button text="Submit" />
+                <Button text="Đăng ký" color="blue" action={handleRegister} />
             </div>
         </SForm>
     )

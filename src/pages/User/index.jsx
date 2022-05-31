@@ -5,12 +5,14 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import styled from 'styled-components'
 import { SButton } from '../../components/Button'
+import ChangePassword from './ChangePassword'
 import EditUserModal from './EditUserModal'
 
 const User = () => {
     const [currentUser, setCurrentUser] = useState(null);
     const [showEditUser, setShowEditUser] = useState(false);
     const [showUserInfo, setShowUserInfo] = useState(true);
+    const [showChangePassword, setShowChangePassword] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -24,7 +26,7 @@ const User = () => {
         } else {
             setCurrentUser(current);
         }
-    }, [])
+    }, [showUserInfo])
     console.log(currentUser);
 
     const handleEdit = () => {
@@ -37,7 +39,10 @@ const User = () => {
         setShowUserInfo(true);
     }
 
-    const handleChangePassword = () => {}
+    const handleChangePassword = () => {
+        setShowChangePassword(true);
+        setShowUserInfo(false);
+    }
 
   return (
     <SUser>
@@ -50,17 +55,18 @@ const User = () => {
                 <h1>{currentUser.username}</h1>
             </div>
             <div className="info">
+                <h1 style={{margin: "15px"}}>Thông tin người dùng</h1>
                 <div className="info-row">
                     <span className="info-row-title">Tên người dùng: </span>
                     <span className="info-row-value">{currentUser.username}</span>
                 </div>
                 <div className="info-row">
                     <span className="info-row-title">Giới tính: </span>
-                    <span className="info-row-value">{currentUser.gender}</span>
+                    <span className="info-row-value">{currentUser.gender === "male" ? "Nam" : "Nữ"}</span>
                 </div>
                 <div className="info-row">
                     <span className="info-row-title">Ngày sinh: </span>
-                    <span className="info-row-value">{currentUser.address}</span>
+                    <span className="info-row-value">{currentUser.dob}</span>
                 </div>
                 <div className="info-row">
                     <span className="info-row-title">Số điện thoại: </span>
@@ -71,12 +77,13 @@ const User = () => {
                     <span className="info-row-value">{currentUser.address}</span>
                 </div>
                 <div className="btn-group">
-                    <SButton style={{width: 100, height: 40, fontSize: 12}} onClick={handleEdit}>Edit Information</SButton>
-                    <SButton style={{width: 100, height: 40, fontSize: 12}} onClick={handleChangePassword}>Change Password</SButton>
+                    <SButton style={{width: 100, height: 40, fontSize: 12}} onClick={handleEdit}>Sửa thông tin</SButton>
+                    <SButton style={{width: 100, height: 40, fontSize: 12}} onClick={handleChangePassword}>Đổi mật khẩu</SButton>
                 </div>
             </div>
                 </>)}
-            {showEditUser && <EditUserModal currentUser={currentUser} handleCancel={handleCancelEdit} />}
+            {showEditUser && <EditUserModal currentUser={currentUser} handleCancel={handleCancelEdit} setShowEditUser={setShowEditUser} setShowUserInfo={setShowUserInfo} />}
+            {showChangePassword && <ChangePassword setShowChangePassword={setShowChangePassword} setShowUserInfo={setShowUserInfo} />}
         </>)}
     </SUser>
   )
