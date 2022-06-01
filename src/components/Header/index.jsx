@@ -4,7 +4,7 @@ import './styles.css'
 import { toast } from 'react-toastify';
 import {BsSearch} from 'react-icons/bs'
 import {MdExpandMore} from 'react-icons/md'
-import {IoCloseSharp} from 'react-icons/io5'
+import {IoCloseSharp, IoTicketOutline} from 'react-icons/io5'
 
 const Header = () => {
   const [searchDisplay, setSearchDisplay] = useState(false);
@@ -31,13 +31,13 @@ const Header = () => {
   return (
     <div className='header'>
         <div className='header-logo header-units'>
-          <Link to='/'>tickets</Link>
+          <Link to='/'><IoTicketOutline/>tickets</Link>
         </div>
         <div className='header-menu header-units'>
-          Menu List <MdExpandMore/>
+          Xem Thêm <MdExpandMore/>
           <div className='dropdown-menu'>
-            <Link to=''>About us</Link>
-            <Link to=''>Cinema list</Link>
+            <Link to=''>Về chúng tôi</Link>
+            <Link to=''>Hệ thống rạp chiếu</Link>
           </div>
         </div>
         <div className='header-search header-units'>
@@ -52,18 +52,18 @@ const Header = () => {
           <div className="header-account header-units">
             {(currentUser.isAdmin && (
                 <NavLink style={({isActive}) => 
-                  isActive ? activeStyle : undefined} to="/admin">Administrator
+                  isActive ? activeStyle : undefined} to="/admin">(Administrator)
                 </NavLink>
             ))}
             <NavLink style={({isActive}) => 
                   isActive ? activeStyle : undefined} to="/user">Xin chào {currentUser.username}!
             </NavLink>
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={handleLogout}>Đăng xuất</button>
           </div>
         ) : ( 
           <div className="header-account header-units">
-            <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-up" className='account-link'>Sign up</NavLink>
-            <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-in" className='account-link sign-up-link'>Sign in</NavLink>
+            <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-up" className='account-link'>Đăng ký</NavLink>
+            <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-in" className='account-link sign-up-link'>Đăng nhập</NavLink>
           </div>      
         ) 
       }
