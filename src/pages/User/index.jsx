@@ -32,6 +32,11 @@ const User = () => {
         setShowUserInfo(false);
     }
 
+    const handleCancelEdit=() => {
+        setShowEditUser(false);
+        setShowUserInfo(true);
+    }
+
     const handleChangePassword = () => {}
 
   return (
@@ -71,7 +76,7 @@ const User = () => {
                 </div>
             </div>
                 </>)}
-            {showEditUser && <EditUserModal currentUser={currentUser} />}
+            {showEditUser && <EditUserModal currentUser={currentUser} handleCancel={handleCancelEdit} />}
         </>)}
     </SUser>
   )
