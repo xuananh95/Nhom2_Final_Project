@@ -36,8 +36,8 @@ const Header = () => {
         <div className='header-menu header-units'>
           Xem Thêm <MdExpandMore/>
           <div className='dropdown-menu'>
-            <Link to=''>Về chúng tôi</Link>
-            <Link to=''>Hệ thống rạp chiếu</Link>
+            <Link to='/about-us'>Về chúng tôi</Link>
+            <Link to='/cinema'>Hệ thống rạp chiếu</Link>
           </div>
         </div>
         <div className='header-search header-units'>

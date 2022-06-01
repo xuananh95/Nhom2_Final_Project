@@ -5,5 +5,40 @@
     right: 0;
     color: white;
     background-color: rgb(9, 11, 16);
-    padding: 15px 40px;
+    border-top: 1px solid rgb(36, 43, 63);
+}
+
+.footer-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 1.5em;
+}
+
+.footer-link > a {
+    color: white;
+}
+
+.footer-company {
+    padding: 0.5em 0 2em 0;
+    text-align: center;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+    width: 100%;
+    border: 1px solid rgb(36, 43, 63);
+    padding: 2em;
+}
+
+.footer-social > a {
+    color: white;
+    padding: 18px 22px;
+    background-color: rgb(50, 50, 50, 0.3);
+    border-radius: 50%;
+    font-size: 23px;
 }

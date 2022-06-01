@@ -8,6 +8,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Admin from "./pages/Admin";
 import User from "./pages/User";
+import AboutUs from "./pages/Aboutus";
+import Cinema from "./pages/Cinema"
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
             <Route path="/sign-in" element={<Signin />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/user" element={<User />} />
+            <Route path='/about-us' element={<AboutUs />} />
+            <Route path='cinema' element={<Cinema />} />
           </Routes>
         </Layout>
       </BrowserRouter>
