@@ -123,5 +123,6 @@
     padding: 7px 10px;
     border-radius: 10px;
     border: none;
-    background-color:rgb(55, 120, 232)
+    background-color:rgb(55, 120, 232);
+    cursor: pointer;
 }

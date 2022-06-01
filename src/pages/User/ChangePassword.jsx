@@ -40,8 +40,10 @@ const ChangePassword = ({setShowChangePassword, setShowUserInfo}) => {
         localStorage.setItem('currentUser', JSON.stringify(currentUser));
         users.map(c => c.id === currentUser.id ? {...c, password: newPwd} : c);
         localStorage.setItem('users', JSON.stringify(users));
+        toast.success('Đổi mật khẩu thành công!');
         setShowChangePassword(false);
         setShowUserInfo(true);
+        
     }
   return (
     <SChangePwd onSubmit={handleSubmit}>

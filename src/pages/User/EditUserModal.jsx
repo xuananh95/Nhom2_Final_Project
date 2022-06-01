@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { toast } from 'react-toastify';
-import styled from 'styled-components'
-import { validate } from 'uuid';
-import Button, { SButton } from '../../components/Button';
+import styled from 'styled-components';
+import Button from '../../components/Button';
 
 
 

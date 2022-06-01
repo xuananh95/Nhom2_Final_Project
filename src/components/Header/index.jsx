@@ -58,12 +58,12 @@ const Header = () => {
             <NavLink style={({isActive}) => 
                   isActive ? activeStyle : undefined} to="/user">Xin chào {currentUser.username}!
             </NavLink>
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={handleLogout}>Đăng xuất</button>
           </div>
         ) : ( 
           <div className="header-account header-units">
-            <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-up" className='account-link'>Sign up</NavLink>
-            <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-in" className='account-link sign-up-link'>Sign in</NavLink>
+            <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-up" className='account-link'>Đăng ký</NavLink>
+            <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-in" className='account-link sign-up-link'>Đăng nhập</NavLink>
           </div>      
         ) 
       }
