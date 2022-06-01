@@ -40,7 +40,7 @@
     top: 50px;
     left: 20px;
     background-color: whitesmoke;
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 100px;
     height: fit-content;
@@ -69,7 +69,7 @@
 }
 
 .header-menu:hover > .dropdown-menu {
-    scale: 1;
+    display: flex;
 }
 
 .header-search {
