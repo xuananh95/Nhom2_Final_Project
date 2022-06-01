@@ -8,6 +8,7 @@ import Button from '../../components/Button';
 const EditUserModal = ({currentUser, handleCancel, setShowEditUser, setShowUserInfo  }) => {
   const [users, setUsers] = useState([]);
   const [gender, setGender] = useState(currentUser.gender);
+  let selected_male = gender === 'male' ? true : false;
   const [dob, setDob] = useState(currentUser.dob);
   const [phone, setPhone] = useState(currentUser.phone);
   const [address, setAddress] = useState(currentUser.address);
@@ -38,7 +39,6 @@ const EditUserModal = ({currentUser, handleCancel, setShowEditUser, setShowUserI
     setShowEditUser(false);
     setShowUserInfo(true);
   }
-  // useEffect(() => {console.log('a', users);}, [users])
   
 
 
@@ -55,9 +55,9 @@ const EditUserModal = ({currentUser, handleCancel, setShowEditUser, setShowUserI
           <div className="info-row">
             <span className="info-row-title">Giới tính: </span>
             <span className="info-row-value">
-              <select selected="male" onChange={(e) => {setGender(e.target.value); console.log(e.target.value)}}>
-                <option value="male">Nam</option>
-                <option value="female">Nữ</option>
+              <select onChange={(e) => {setGender(e.target.value)}}>
+                <option value="male" selected={selected_male}>Nam</option>
+                <option value="female" selected={!selected_male}>Nữ</option>
               </select>
             </span>
           </div>

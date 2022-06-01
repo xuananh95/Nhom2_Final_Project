@@ -34,4 +34,7 @@ export const SButton = styled.button`
 
     }
     margin-right: 10px;
+    &:hover{
+        transform: scale(1.1);
+    }
 `;

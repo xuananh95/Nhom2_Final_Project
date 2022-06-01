@@ -1,30 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { SUserItem } from './styles'
 import {AiOutlineDelete} from 'react-icons/ai'
-import Button from '../../../components/Button'
-const UserItem = ({user}) => {
-  const handleShowInfo = () => {
+import UserInfo from '../../User/UserInfo';
+const UserItem = ({user, handleDelete}) => {
+  const [showUserInfoOnHover, setShowUserInfoOnHover] = useState(false);
 
-  }
-
-  const handleDelete = () => {
-
-  }
   return (
     <SUserItem>
-      <div className="item-left">
-        <h3>{user.username}</h3>
-      </div>
-      <div className="item-right">
-        <div className="user-info">
-          <button onClick={handleShowInfo}>Xem thêm</button>
+      <div className="head">
+        <div className="item-left">
+            <h2>{user.username}</h2>
         </div>
+        <div className="item-right">
+          <div className="user-info-btn">
+            <button onMouseEnter={() => setShowUserInfoOnHover(true)} onMouseLeave={() => setShowUserInfoOnHover(false)} >
+              Xem thêm
+            </button>
+            {showUserInfoOnHover && <div className="info-container">
+          <UserInfo user={user} />
+      </div>}
+          </div>
 
-        <div className="delete">
-          <AiOutlineDelete className="delete-btn" fontSize={25}/>
+          <div className="delete">
+            <AiOutlineDelete className="delete-btn" fontSize={25} onClick={() => handleDelete(user.id)}/>
+          </div>
         </div>
       </div>
-      <hr />
+      
     </SUserItem>
   )
 }

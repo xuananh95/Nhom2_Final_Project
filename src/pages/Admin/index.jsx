@@ -24,13 +24,20 @@ const Admin = () => {
         const usersLocal = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
         setUsers(usersLocal);
     }, [])
+
+    const handleDelete = (id) => {
+        const newUsers = users.filter(user => user.id !== id);
+        setUsers(newUsers);
+        localStorage.setItem('users', JSON.stringify(newUsers));
+    }
+
     return (
         <SAdmin>
             <h1>Danh sách người dùng</h1>
             {users.length > 1 
                 ? users.filter(user => user.isAdmin === false)
-                        .map(user=>(<UserItem key={user.id} user={user} />)) 
-                : (<div>Chưa có người dùng!</div>)}
+                        .map(user=>(<UserItem key={user.id} user={user} handleDelete={handleDelete} />)) 
+                : (<div style={{margin: 20}}>Hiện hệ thống chưa có người dùng nào đăng ký tài khoản!</div>)}
             {}
         </SAdmin>
     )
