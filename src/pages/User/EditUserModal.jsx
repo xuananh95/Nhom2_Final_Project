@@ -1,15 +1,24 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { toast } from 'react-toastify';
-import styled from 'styled-components'
-import { validate } from 'uuid';
-import Button, { SButton } from '../../components/Button';
+import styled from 'styled-components';
+import Button from '../../components/Button';
 
-const EditUserModal = ({currentUser, handleCancel}) => {
-  const [gender, setGender] = useState('male');
-  const [dob, setDob] = useState(new Date());
-  const [phone, setPhone] = useState('');
-  const [address, setAddress] = useState('');
+
+
+const EditUserModal = ({currentUser, handleCancel, setShowEditUser, setShowUserInfo  }) => {
+  const [users, setUsers] = useState([]);
+  const [gender, setGender] = useState(currentUser.gender);
+  let selected_male = gender === 'male' ? true : false;
+  const [dob, setDob] = useState(currentUser.dob);
+  const [phone, setPhone] = useState(currentUser.phone);
+  const [address, setAddress] = useState(currentUser.address);
   const inputRef = useRef(null);
+
+  useEffect(() => {
+    const usersLocal = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
+    setUsers(usersLocal);
+  }, [])
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!dob || !phone || !address){
@@ -22,7 +31,15 @@ const EditUserModal = ({currentUser, handleCancel}) => {
       inputRef.current.focus();
       return;
     }
+    const newUsers = users.map((c) => c.id === currentUser.id ? {...c, phone: phone, address: address, gender:gender, dob: dob} : c);
+    const newUser = newUsers.find(c => c.id === currentUser.id);
+    setUsers(newUsers);
+    localStorage.setItem('users', JSON.stringify(newUsers));
+    localStorage.setItem('currentUser', JSON.stringify(newUser));
+    setShowEditUser(false);
+    setShowUserInfo(true);
   }
+  
 
 
   // xác định format số điện thoại, cho phép các sdt gồm 10 số nếu có nhập số 0 ở đâu, 9 số nếu không
@@ -38,9 +55,9 @@ const EditUserModal = ({currentUser, handleCancel}) => {
           <div className="info-row">
             <span className="info-row-title">Giới tính: </span>
             <span className="info-row-value">
-              <select>
-                <option value="male">Nam</option>
-                <option value="female">Nữ</option>
+              <select onChange={(e) => {setGender(e.target.value)}}>
+                <option value="male" selected={selected_male}>Nam</option>
+                <option value="female" selected={!selected_male}>Nữ</option>
               </select>
             </span>
           </div>
@@ -57,8 +74,8 @@ const EditUserModal = ({currentUser, handleCancel}) => {
               <span className="info-row-value"><input type="text" value={address} onChange={(e) =>{setAddress(e.target.value)}} /></span>
           </div>
           <div className="btn-group">
-              <button className="edit-btn" onClick={handleCancel}>HỦY</button>
-              <Button text="LƯU" />
+              <Button text="HỦY" color="gray" action={handleCancel} />
+              <Button text="LƯU" color="blue" action={handleSubmit} />
           </div>
       </div>
     </SEditUserModal>
@@ -108,21 +125,6 @@ const SEditUserModal = styled.form`
       display: flex;
       flex-direction: row;
       justify-content: center;
-      .edit-btn{
-        margin-right: 20px;
-        width: 80px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        color: black;
-        border: none;
-        background-color: #c0bdbd;
-        border-radius: 5px;
-        padding: 10px;
-        font-size: 15px;
-      }
     }
   }
 `;

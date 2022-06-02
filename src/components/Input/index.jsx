@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const Input = ({ label, value, onChange }) => {
+const Input = ({ label, value, onChange, inputType="text" }) => {
 
     return (
         <SInput>
             <label>{label}</label>
-            <input type="text" value={value} onChange={onChange} />
+            <input type={inputType} value={value} onChange={onChange} />
         </SInput>
     )
 }

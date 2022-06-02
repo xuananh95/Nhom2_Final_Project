@@ -5,12 +5,15 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import styled from 'styled-components'
 import { SButton } from '../../components/Button'
+import ChangePassword from './ChangePassword'
 import EditUserModal from './EditUserModal'
+import UserInfo from './UserInfo'
 
 const User = () => {
     const [currentUser, setCurrentUser] = useState(null);
     const [showEditUser, setShowEditUser] = useState(false);
     const [showUserInfo, setShowUserInfo] = useState(true);
+    const [showChangePassword, setShowChangePassword] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -24,7 +27,7 @@ const User = () => {
         } else {
             setCurrentUser(current);
         }
-    }, [])
+    }, [showUserInfo])
     console.log(currentUser);
 
     const handleEdit = () => {
@@ -37,7 +40,10 @@ const User = () => {
         setShowUserInfo(true);
     }
 
-    const handleChangePassword = () => {}
+    const handleChangePassword = () => {
+        setShowChangePassword(true);
+        setShowUserInfo(false);
+    }
 
   return (
     <SUser>
@@ -49,34 +55,18 @@ const User = () => {
                 <img src="https://thumbs.dreamstime.com/b/user-icon-vector-people-profile-person-illustration-business-users-group-symbol-male-195161330.jpg" alt="user" width="100" height="100" />
                 <h1>{currentUser.username}</h1>
             </div>
-            <div className="info">
-                <div className="info-row">
-                    <span className="info-row-title">Tên người dùng: </span>
-                    <span className="info-row-value">{currentUser.username}</span>
-                </div>
-                <div className="info-row">
-                    <span className="info-row-title">Giới tính: </span>
-                    <span className="info-row-value">{currentUser.gender}</span>
-                </div>
-                <div className="info-row">
-                    <span className="info-row-title">Ngày sinh: </span>
-                    <span className="info-row-value">{currentUser.address}</span>
-                </div>
-                <div className="info-row">
-                    <span className="info-row-title">Số điện thoại: </span>
-                    <span className="info-row-value">{currentUser.phone}</span>
-                </div>
-                <div className="info-row">
-                    <span className="info-row-title">Địa chỉ: </span>
-                    <span className="info-row-value">{currentUser.address}</span>
-                </div>
+            <div className="info">                
+                <h1 style={{margin: "15px"}}>Thông tin người dùng</h1>
+                <UserInfo user={currentUser} />
                 <div className="btn-group">
-                    <SButton style={{width: 100, height: 40, fontSize: 12}} onClick={handleEdit}>Edit Information</SButton>
-                    <SButton style={{width: 100, height: 40, fontSize: 12}} onClick={handleChangePassword}>Change Password</SButton>
+                    <SButton style={{width: 100, height: 40, fontSize: 12}} onClick={handleEdit}>Sửa thông tin</SButton>
+                    <SButton style={{width: 100, height: 40, fontSize: 12}} onClick={handleChangePassword}>Đổi mật khẩu</SButton>
                 </div>
             </div>
+            
                 </>)}
-            {showEditUser && <EditUserModal currentUser={currentUser} handleCancel={handleCancelEdit} />}
+            {showEditUser && <EditUserModal currentUser={currentUser} handleCancel={handleCancelEdit} setShowEditUser={setShowEditUser} setShowUserInfo={setShowUserInfo} />}
+            {showChangePassword && <ChangePassword setShowChangePassword={setShowChangePassword} setShowUserInfo={setShowUserInfo} />}
         </>)}
     </SUser>
   )
@@ -112,19 +102,6 @@ const SUser = styled.div`
         width: 100%;
         display: flex;
         flex-direction: column;
-        .info-row {
-            margin-top: 10px;
-            display: flex;
-            flex-direction: row;
-            .info-row-title{
-                flex: 1;
-                font-weight: bold;
-            }
-            .info-row-value{
-                margin-left: 35px;
-                flex: 2;
-            }
-        }
         .btn-group {
             width: 100%;
             margin-top: 20px;
