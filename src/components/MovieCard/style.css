@@ -1,0 +1,48 @@
+.film-list{
+    margin-bottom: 20px;
+}
+img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+.product-image{
+    position: relative;
+}
+.trailer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    cursor: pointer;
+}
+.details{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 20%;
+    background:  rgba(0, 0, 0, 0.8);;
+}
+.info,.ticket{
+    background: red;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.trailer span{
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: red;
+    color: white;
+    border-radius: 10px;
+}
+.product-image:hover .modal_info{
+    display: block;
+    /* bottom: 5px; */
+}
+.movie_name{
+    font-size: 25px;
+}
