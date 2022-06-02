@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import { SUserInfo } from './styles';
 import {FaUserAlt, FaBirthdayCake, FaPhoneSquareAlt, FaHome} from 'react-icons/fa'
 import {BsGenderAmbiguous} from 'react-icons/bs';
 
@@ -34,20 +34,3 @@ const UserInfo = ({user}) => {
 
 export default UserInfo
 
-const SUserInfo = styled.div`
-    .info-row {
-        margin-top: 10px;
-        display: flex;
-        flex-direction: row;
-        .info-row-title{
-            flex: 1;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-        }
-        .info-row-value{
-            margin-left: 35px;
-            flex: 1;
-        }
-    }
-`;

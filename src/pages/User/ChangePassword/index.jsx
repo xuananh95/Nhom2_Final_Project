@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import styled from 'styled-components'
-import Button from '../../components/Button';
-import Input from '../../components/Input';
+import { SChangePwd } from './styles';
+import Button from '../../../components/Button';
+import Input from '../../../components/Input';
 
 const ChangePassword = ({setShowChangePassword, setShowUserInfo}) => {
     const [oldPwd, setOldPwd] = useState('');
@@ -61,24 +61,4 @@ const ChangePassword = ({setShowChangePassword, setShowUserInfo}) => {
 
 export default ChangePassword
 
-const SChangePwd = styled.form`
-    background-color: white;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    h1 {
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    .btn-group {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding: 10px;
-    }
-`;
+

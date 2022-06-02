@@ -9,6 +9,9 @@ const UserItem = ({user, handleDelete}) => {
     <SUserItem>
       <div className="head">
         <div className="item-left">
+            <div className="profile-picture">
+              <img src={require(`../../../images/${user.image}`)} alt="profile" width={50} height={50} />
+            </div>
             <h2>{user.username}</h2>
         </div>
         <div className="item-right">

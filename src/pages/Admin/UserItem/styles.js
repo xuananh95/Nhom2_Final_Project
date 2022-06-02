@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const SUserItem = styled.div`
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   border-radius: 5px;
   width: 100%;
+  height: 100%;
   max-width: 500px;
   display: flex;
   flex-direction: column;
@@ -12,10 +14,21 @@ export const SUserItem = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    padding: 5px;
     .item-left {
       flex: 1;
       text-align: center;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      .profile-picture {
+        border-radius: 50%;
+        img {
+          border-radius: 50%;
+          border: 1px solid black;
+        }
+      }
     }
     .item-right {
       position: relative;

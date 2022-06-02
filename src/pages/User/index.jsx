@@ -3,17 +3,21 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import styled from 'styled-components'
 import { SButton } from '../../components/Button'
 import ChangePassword from './ChangePassword'
 import EditUserModal from './EditUserModal'
 import UserInfo from './UserInfo'
+import { SUser } from './styles'
+import {GiCancel} from 'react-icons/gi'
+import UserHistory from './UserHistory'
 
 const User = () => {
     const [currentUser, setCurrentUser] = useState(null);
+    const [users, setUsers] = useState([]);
     const [showEditUser, setShowEditUser] = useState(false);
     const [showUserInfo, setShowUserInfo] = useState(true);
     const [showChangePassword, setShowChangePassword] = useState(false);
+    const [showChangeImages, setShowChangeImages] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -26,6 +30,8 @@ const User = () => {
             toast.error('You need to sign in first!')
         } else {
             setCurrentUser(current);
+            const usersLocal = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
+            setUsers(usersLocal);
         }
     }, [showUserInfo])
     console.log(currentUser);
@@ -45,70 +51,89 @@ const User = () => {
         setShowUserInfo(false);
     }
 
+    const handleChangeImage = () => {
+        setShowChangeImages(true);
+    }
+
+    const handleChooseNewImage = (name) => {
+        const newCurrentUser = {...currentUser, image: name};
+        setCurrentUser(newCurrentUser);
+        localStorage.setItem('currentUser', JSON.stringify(newCurrentUser));
+        const newUsers = users.map(user => user.id === currentUser.id ? {...user, image: name} : user)
+        setUsers(newUsers);
+        localStorage.setItem('users', JSON.stringify(newUsers));
+        setShowChangeImages(false);
+    }
+
   return (
     <SUser>
         {currentUser && 
         (<>
+            <div className="user-info">
             {showUserInfo && 
                 (<>
-                    <div className="picture">
-                <img src="https://thumbs.dreamstime.com/b/user-icon-vector-people-profile-person-illustration-business-users-group-symbol-male-195161330.jpg" alt="user" width="100" height="100" />
-                <h1>{currentUser.username}</h1>
-            </div>
-            <div className="info">                
-                <h1 style={{margin: "15px"}}>Thông tin người dùng</h1>
-                <UserInfo user={currentUser} />
-                <div className="btn-group">
-                    <SButton style={{width: 100, height: 40, fontSize: 12}} onClick={handleEdit}>Sửa thông tin</SButton>
-                    <SButton style={{width: 100, height: 40, fontSize: 12}} onClick={handleChangePassword}>Đổi mật khẩu</SButton>
-                </div>
-            </div>
-            
+                    <div className="item-left">
+                        <div class="profile-pic" onClick={handleChangeImage}>
+                            <label class="-label" for="file">
+                                <span>Change Image</span>
+                            </label>
+                            <img className="ava" src={require(`../../images/${currentUser.image}`)} alt="profile" id="output" width="200" />
+                        </div>
+                            <h1>{currentUser.username}</h1>
+                    </div>
+                    <div className="item-right">
+                        {showChangeImages && (
+                            <div className="images">
+                                <div className="images-header"> 
+                                    <h2>CHỌN ẢNH ĐẠI DIỆN</h2>
+                                    <div className="exit" onClick={() => setShowChangeImages(false)}>
+                                        <GiCancel />
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <button onClick={() => handleChooseNewImage('default.jpg')}>
+                                        <img className="pic" src={require("../../images/default.jpg")} alt="profile" width="100" height="100" />
+                                    </button>
+                                    <button onClick={() => handleChooseNewImage('corgi.jpg')}>
+                                        <img className="pic" src={require("../../images/corgi.jpg")} alt="profile" width="100" height="100" />
+                                    </button>
+                                    <button onClick={() => handleChooseNewImage('cat.jpg')}>
+                                        <img className="pic" src={require("../../images/cat.jpg")} alt="profile" width="100" height="100" />
+                                    </button>
+                                </div>
+                                <div className="row">
+                                    <button onClick={() => handleChooseNewImage('cat2.jpg')}>
+                                        <img className="pic" src={require("../../images/cat2.jpg")} alt="profile" width="100" height="100" />
+                                    </button>
+                                    <button onClick={() => handleChooseNewImage('shark.jpg')}>
+                                        <img className="pic" src={require("../../images/shark.jpg")} alt="profile" width="100" height="100" />
+                                    </button>
+                                    <button onClick={() => handleChooseNewImage('bear.jpg')}>
+                                        <img className="pic" src={require("../../images/bear.jpg")} alt="profile" width="100" height="100" />
+                                    </button>   
+                                </div>
+                            </div>
+                            )}                
+                        {!showChangeImages && (<div className="info"><h1 style={{margin: "15px"}}>Thông tin người dùng</h1>
+                        <UserInfo user={currentUser} />
+                        <div className="btn-group">
+                            <SButton style={{width: 100, height: 40, fontSize: 12}} onClick={handleEdit}>Sửa thông tin</SButton>
+                            <SButton style={{width: 100, height: 40, fontSize: 12}} onClick={handleChangePassword}>Đổi mật khẩu</SButton>
+                        </div></div>)}
+                    </div>
                 </>)}
-            {showEditUser && <EditUserModal currentUser={currentUser} handleCancel={handleCancelEdit} setShowEditUser={setShowEditUser} setShowUserInfo={setShowUserInfo} />}
-            {showChangePassword && <ChangePassword setShowChangePassword={setShowChangePassword} setShowUserInfo={setShowUserInfo} />}
+                {showEditUser && <EditUserModal currentUser={currentUser} handleCancel={handleCancelEdit} setShowEditUser={setShowEditUser} setShowUserInfo={setShowUserInfo} />}
+                {showChangePassword && <ChangePassword setShowChangePassword={setShowChangePassword} setShowUserInfo={setShowUserInfo} />}
+            </div>
+
+            <div className="user-history">
+                <h1>Lịch sử đặt vé</h1>
+                <UserHistory />
+            </div>
+
         </>)}
     </SUser>
   )
 }
 
 export default User
-
-const SUser = styled.div`
-    margin: 0 auto;
-    margin-top: 20px;
-    width: 100%;
-    max-width: 700px;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    /* justify-content: space-between; */
-    align-items: center;
-    color: black;
-    border-radius: 5px;
-    .picture{
-        flex: 1;
-        text-align: center;
-        width: 100%;
-        img {
-            border-radius: 50%;
-            border: 1px solid black;
-        }
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .info {
-        flex: 2;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        .btn-group {
-            width: 100%;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-around;
-        }
-        
-    }
-`;

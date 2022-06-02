@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { toast } from 'react-toastify';
-import styled from 'styled-components';
-import Button from '../../components/Button';
+import { SEditUserModal } from './styles';
+import Button from '../../../components/Button';
 
 
 
@@ -84,47 +84,3 @@ const EditUserModal = ({currentUser, handleCancel, setShowEditUser, setShowUserI
 
 export default EditUserModal
 
-const SEditUserModal = styled.form`
-  margin: 0 auto;
-  margin-top: 20px;
-  width: 100%;
-  max-width: 700px;
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  color: black;
-  border-radius: 5px;
-  padding: 20px;
-  .edit-info{
-    width: 80%;
-    max-width: 700px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .info-row {
-      margin-top: 10px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      .info-row-title{
-        flex: 1;
-        font-weight: bold;
-      }
-      .info-row-value {
-        flex: 1;
-        margin-left: 35px;
-      }
-    }
-    .btn-group{
-      margin-top: 20px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-    }
-  }
-`;

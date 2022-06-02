@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import Button from '../../components/Button'
 import { toast } from 'react-toastify'
 import { SForm } from '../Signup'
+import {FaUserAlt} from 'react-icons/fa'
+import {RiLockPasswordFill} from 'react-icons/ri'
 
 const SignIn = () => {
     const [user, setUser] = useState({
@@ -45,8 +47,8 @@ const SignIn = () => {
     return (
         <SForm onSubmit={handleSubmit}>
             <h1 className="text">Sign in</h1>
-            <Input label="Tên đăng nhập" value={username} onChange={(e) => setUser({ ...user, username: e.target.value })} />
-            <Input label="Mật khẩu" value={password} onChange={(e) => setUser({ ...user, password: e.target.value })} inputType="password" />
+            <Input label="Tên đăng nhập" value={username} onChange={(e) => setUser({ ...user, username: e.target.value })} el={(<FaUserAlt color="black" style={{marginRight:"10px"}} />)} />
+            <Input label="Mật khẩu" value={password} onChange={(e) => setUser({ ...user, password: e.target.value })} inputType="password" el={(<RiLockPasswordFill color="black" style={{marginRight:"10px"}} />)}  />
             <Link to="/sign-up">Chưa có tài khoản? Tạo mới ngay!</Link>
             <div className="button-group">
                 <Button text="Đăng nhập" color="blue" action={handleSubmit} />
