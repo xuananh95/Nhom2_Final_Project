@@ -137,5 +137,6 @@ export const SUser = styled.div`
     max-width: 700px;
     border: 1px solid green;
     border-radius: 5px;
+    text-align: center;
   }
 `;
