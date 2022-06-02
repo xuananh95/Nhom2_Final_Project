@@ -15,12 +15,16 @@
     min-width: fit-content;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
 .header-logo > a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    font-size: 27px;
+    font-size: 30px;
     color: rgb(55, 120, 232);
+    font-family: 'Kaushan Script', cursive;
+    font-family: 'Creepster', cursive;
 }
 
 .header-logo:hover > a {
@@ -30,15 +34,15 @@
 .header-menu {
     cursor: pointer;
     position: relative;
-    padding: 20px;
+    padding: 25px;
     color: whitesmoke;
-    font-size: 17px;
+    font-size: 27px;
 }
 
 .dropdown-menu {
     position: absolute;
     top: 50px;
-    left: 20px;
+    left: -12px;
     background-color: whitesmoke;
     display: none;
     flex-direction: column;
@@ -120,9 +124,9 @@
 
 .header-account > button {
     color: white;
-    padding: 7px 10px;
+    padding: 10px 15px;
     border-radius: 10px;
-    border: none;
-    background-color:rgb(55, 120, 232);
-    cursor: pointer;
+    border: 1px solid rgb(55, 120, 232);
+    background-color: transparent;
+    font-size: 16px;
 }

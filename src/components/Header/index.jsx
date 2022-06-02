@@ -3,8 +3,9 @@ import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import './styles.css'
 import { toast } from 'react-toastify';
 import {BsSearch} from 'react-icons/bs'
-import {MdExpandMore} from 'react-icons/md'
-import {IoCloseSharp, IoTicketOutline} from 'react-icons/io5'
+import {IoCloseSharp} from 'react-icons/io5'
+import {ImMenu3} from 'react-icons/im'
+import {GiPopcorn} from 'react-icons/gi'
 
 const Header = () => {
   const [searchDisplay, setSearchDisplay] = useState(false);
@@ -31,10 +32,10 @@ const Header = () => {
   return (
     <div className='header'>
         <div className='header-logo header-units'>
-          <Link to='/'><IoTicketOutline/>tickets</Link>
+          <Link to='/'><GiPopcorn/>tickets</Link>
         </div>
         <div className='header-menu header-units'>
-          Xem Thêm <MdExpandMore/>
+          <ImMenu3/>
           <div className='dropdown-menu'>
             <Link to='/about-us'>Về chúng tôi</Link>
             <Link to='/cinema'>Hệ thống rạp chiếu</Link>
