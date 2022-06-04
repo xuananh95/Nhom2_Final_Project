@@ -1,0 +1,32 @@
+.wrap_info h1{
+    height: 50px;
+    border-bottom: 2px solid white;
+    margin: 30px 0;
+    font-size: 40px;
+}
+.wrap_info{
+   width: 1200px;
+   margin: 0 auto;
+}
+.information{
+    width: 100%;
+    display: flex;
+}
+.product-information{
+    margin-left: 30px;
+}
+.product-information h2{
+    font-size: 40px;
+    font-weight: 100;
+}
+.std{
+    display: flex;
+    margin: 10px 0;
+}
+.avatar-cast{
+    display: flex;
+    margin-top: 30px;
+}
+.profile_path{
+    margin-right: 10px;
+}

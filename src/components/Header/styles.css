@@ -1,0 +1,132 @@
+.header {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 80px;
+    background-color: rgb(9, 11, 16);
+    border-bottom: 1px solid rgb(36, 43, 63);
+}
+
+.header-units {
+    padding: 0px 25px;
+    min-width: fit-content;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+.header-logo > a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(55, 120, 232);
+    font-family: 'Kaushan Script', cursive;
+    font-family: 'Creepster', cursive;
+}
+
+.header-logo:hover > a {
+    color: rgb(103, 158, 255);
+}
+
+.header-menu {
+    cursor: pointer;
+    position: relative;
+    padding: 25px;
+    color: whitesmoke;
+    font-size: 27px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 50px;
+    left: -12px;
+    background-color: whitesmoke;
+    display: none;
+    flex-direction: column;
+    width: 100px;
+    height: fit-content;
+    padding: 20px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(50, 50, 50);
+    gap: 8px;
+    font-size: 13px;
+    transition: all 0.2s linear;
+    scale: 0;
+}
+
+.dropdown-menu > a {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.dropdown-menu > a:hover {
+    background-color: rgb(103, 158, 255)
+}
+
+.header-menu:hover {
+    color: rgb(167, 196, 245);
+}
+
+.header-menu:hover > .dropdown-menu {
+    display: flex;
+}
+
+.header-search {
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    color: white;
+}
+
+.header-search > form > input {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 7px;
+    min-width: 300px;
+}
+
+.header-search > form > button {
+    color: white;
+    border: 1px solid rgb(55, 120, 232);
+    background-color: transparent;
+    margin: 5px;
+    padding: 5px 7px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.header-account {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-account > a {
+    text-decoration: none;
+    color: white;
+}
+
+.account-link {
+    padding: 10px 20px;
+    min-width: fit-content;
+}
+
+.sign-up-link {
+    border: 1px solid rgb(55, 120, 232);
+    border-radius: 10px;
+}
+
+.header-account > button {
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid rgb(55, 120, 232);
+    background-color: transparent;
+    font-size: 16px;
+}
