@@ -46,14 +46,17 @@ const Header = () => {
     setSearchInput(e.target.value)
     if(e.target.value.length > 0) {
       setSearchResults(data.filter((d) => {
-        if(d.title.toLowerCase().includes(e.target.value.toLowerCase()) || d.tagline.toLowerCase().includes(e.target.value.toLowerCase()) || d.overview.toLowerCase().includes(e.target.value.toLowerCase())) {return d}
+        if(d.title.toLowerCase().includes(e.target.value.toLowerCase()) || d.tagline.toLowerCase().includes(e.target.value.toLowerCase())) {return d}
       }))
     } else {setSearchResults([])}
   }
 
   const showSearch = () => {
     return searchResults.map((d) => {
-      return <li>{d.title}</li>
+      return <li className='search-list'>
+        <h4>{d.title}</h4>
+        <small>{d.tagline}</small>
+      </li>
     })
   }
 
@@ -116,4 +119,13 @@ const SearchDropdown = styled.div`
   color: black;
   border-radius: 5px;
   overflow-y: scroll;
+  padding: 5px;
+
+  .search-list {
+    list-style-type: none;
+    margin-bottom: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+  }
 `
