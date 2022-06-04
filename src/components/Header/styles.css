@@ -113,6 +113,10 @@
     background-color: rgb(167, 196, 245, 0.5);
 }
 
+/* .search-dropdown::-webkit-scrollbar {
+
+} */
+
 .header-account {
     display: flex;
     align-items: center;

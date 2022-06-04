@@ -60,8 +60,8 @@ const Header = () => {
       return <li key={d.id} className='search-list' onClick={handleClick} style={{display: 'flex', gap: '5px'}}>
         <img src={image_path + d.poster_path} style={{width:'20%', height:'auto'}}></img>
         <div style={{width: '80%'}}>
-          <h5>{d.title}</h5>
-          <small>{d.tagline}</small>
+          <h5 style={{color: 'rgb(55, 120, 232)'}}>{d.title}</h5>
+          <small style={{color: 'gray'}}>{d.tagline}</small>
         </div>
       </li>
     })
@@ -85,7 +85,7 @@ const Header = () => {
             <input type='search' placeholder='Tìm kiếm' value={searchInput} onChange={(e) => handleSearch(e)}></input>
             <button onClick={() => {setSearchDisplay(!searchDisplay); setSearchInput(''); setSearchResults([])}}><IoCloseSharp/></button>
             {searchResults.length > 0 ? (
-            <SearchDropdown>
+            <SearchDropdown className='search-dropdown'>
               <ul>{showSearch()}</ul>
             </SearchDropdown>
             ) : null}
@@ -123,16 +123,26 @@ const SearchDropdown = styled.div`
   height: fit-content;
   max-height: 400px;
   background-color: rgb(15, 21, 31, 0.8);
-  color: black;
+  background-image: linear-gradient(to right, rgb(15, 20, 30, 0.85), rgb(20, 27, 43, 0.8), rgb(23, 30, 47, 0.75));
+  border: 1px solid rgb(108, 135, 154, 0.8);
   border-radius: 5px;
   overflow-y: scroll;
   padding: 10px;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgb(55, 120, 232);
+  }
 
   .search-list {
     color: white;
     list-style-type: none;
     margin-bottom: 5px;
-    border: 1px solid rgb(108, 135, 154, 0.8);
     border-radius: 5px;
     padding: 5px;
     background-color: rgba(24, 40, 60, 0.9);
