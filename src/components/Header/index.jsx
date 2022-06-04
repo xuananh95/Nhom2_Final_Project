@@ -19,7 +19,6 @@ const Header = () => {
 
   let activeStyle = {
     color: "rgb(255, 107, 77)",
-
   }
 
   const [currentUser, setCurrentUser] = useState(null);
