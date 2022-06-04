@@ -15,9 +15,9 @@ const Footer = () => {
         </div>
         <p className='footer-company'> © 2022 Copyright Tickets ~ Nhóm 2 Team 3 CI74 </p>
         <div className='footer-social'>
-         <a href=''><FaFacebookF/></a>
-         <a href=''><FaGooglePlusG/></a>
-         <a href=''><FaTwitter/></a>
+         <a href='https://www.facebook.com/groups/359070736011219'><FaFacebookF/></a>
+         <a href='https://www.google.com.vn/?client=safari'><FaGooglePlusG/></a>
+         <a href='https://twitter.com'><FaTwitter/></a>
          <a href='https://github.com/xuananh95/Nhom2_Final_Project'><FaGithub/></a>
         </div>
       </div>
