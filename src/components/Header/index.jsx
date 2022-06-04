@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import './styles.css'
+import styled from 'styled-components'
 import { toast } from 'react-toastify';
 import {BsSearch} from 'react-icons/bs'
 import {IoCloseSharp} from 'react-icons/io5'
@@ -9,14 +10,26 @@ import {GiPopcorn} from 'react-icons/gi'
 
 const Header = () => {
   const [searchDisplay, setSearchDisplay] = useState(false);
+  const [data, setData] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
+  const [searchInput, setSearchInput] = useState('')
+
+  console.log(data)
+  console.log(searchResults)
 
   let activeStyle = {
     color: "rgb(255, 107, 77)",
 
   }
+
   const [currentUser, setCurrentUser] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    const data = localStorage.getItem('Data') ? JSON.parse(localStorage.getItem('Data')) : null;
+    setData(data);
+  }, [])
 
   useEffect(() => {
     const current = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')) : null;
@@ -27,6 +40,21 @@ const Header = () => {
     localStorage.removeItem('currentUser');
     navigate('../sign-in', {replace: true});
     toast.success('Log out successful!');
+  }
+
+  const handleSearch = (e) => {
+    setSearchInput(e.target.value)
+    if(e.target.value.length > 0) {
+      setSearchResults(data.filter((d) => {
+        if(d.title.toLowerCase().includes(e.target.value.toLowerCase()) || d.tagline.toLowerCase().includes(e.target.value.toLowerCase()) || d.overview.toLowerCase().includes(e.target.value.toLowerCase())) {return d}
+      }))
+    } else {setSearchResults([])}
+  }
+
+  const showSearch = () => {
+    return searchResults.map((d) => {
+      return <li>{d.title}</li>
+    })
   }
 
   return (
@@ -43,9 +71,14 @@ const Header = () => {
         </div>
         <div className='header-search header-units'>
           {!searchDisplay ? <div onClick={() => setSearchDisplay(!searchDisplay)}><BsSearch/></div> : (
-          <form>
-            <input type='search' placeholder='Search'></input>
-            <button onClick={() => setSearchDisplay(!searchDisplay)}><IoCloseSharp/></button>
+          <form style={{position: 'relative'}}>
+            <input type='search' placeholder='Search' value={searchInput} onChange={(e) => handleSearch(e)}></input>
+            <button onClick={() => {setSearchDisplay(!searchDisplay); setSearchInput(''); setSearchResults([])}}><IoCloseSharp/></button>
+            {searchResults.length > 0 ? (
+            <SearchDropdown>
+              <ul>{showSearch()}</ul>
+            </SearchDropdown>
+            ) : null}
           </form>)}
         </div>
         <div style={{width: '100%'}}> </div>
@@ -73,3 +106,14 @@ const Header = () => {
 }
 
 export default Header
+
+const SearchDropdown = styled.div`
+  position: absolute;
+  width: 300px;
+  height: fit-content;
+  max-height: 300px;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  overflow-y: scroll;
+`
