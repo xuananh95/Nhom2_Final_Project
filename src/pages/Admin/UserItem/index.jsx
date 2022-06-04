@@ -10,7 +10,7 @@ const UserItem = ({user, handleDelete}) => {
       <div className="head">
         <div className="item-left">
             <div className="profile-picture">
-              <img src={require(`../../../images/${user.image}`)} alt="profile" width={50} height={50} />
+              <img src={require(`../../../images/${user.image}`)} alt="profile" width={100} height={100} />
             </div>
             <h2>{user.username}</h2>
         </div>
@@ -19,13 +19,16 @@ const UserItem = ({user, handleDelete}) => {
             <button onMouseEnter={() => setShowUserInfoOnHover(true)} onMouseLeave={() => setShowUserInfoOnHover(false)} >
               Xem thêm
             </button>
-            {showUserInfoOnHover && <div className="info-container">
-          <UserInfo user={user} />
-      </div>}
+            {
+              showUserInfoOnHover && 
+                  <div className="info-container">
+                      <UserInfo user={user} />
+                  </div>
+            }
           </div>
 
           <div className="delete">
-            <AiOutlineDelete className="delete-btn" fontSize={25} onClick={() => handleDelete(user.id)}/>
+            <AiOutlineDelete className="delete-btn" fontSize={30} onClick={() => handleDelete(user.id)}/>
           </div>
         </div>
       </div>

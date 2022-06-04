@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SAdmin = styled.div`
   background-color: white;
   width: 100%;
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   margin-top: 20px;
   padding: 10px 20px;
@@ -14,6 +14,7 @@ export const SAdmin = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 20px;
   h1 {
     margin: 20px;
   }

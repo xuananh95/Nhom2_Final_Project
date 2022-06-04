@@ -75,11 +75,11 @@ const User = () => {
                                 <div className="item-left">
                                     <div class="profile-pic" onClick={handleChangeImage}>
                                         <label class="-label" for="file">
-                                            <span>Change Image</span>
+                                            <span>Đổi ảnh</span>
                                         </label>
-                                        <img className="ava" src={require(`../../images/${currentUser.image}`)} alt="profile" id="output" width="200" />
+                                        <img className="ava" src={require(`../../images/${currentUser.image}`)} alt="profile" id="output" width="300" />
                                     </div>
-                                    <h1>{currentUser.username}</h1>
+                                    <h1 style={{marginTop: 10}}>{currentUser.username}</h1>
                                 </div>
                                 <div className="item-right">
                                     {showChangeImages && (

@@ -13,31 +13,33 @@ import Cinema from "./pages/Cinema";
 import Movie from "./components/Movie";
 import Info from "./pages/Info";
 import Home from "./pages/Home/data";
+import Error_404 from "./pages/Error_404";
 
 export const dataContext = createContext("");
 
 function App() {
-    return (
-        <div className="App">
-            <dataContext.Provider value={"123"}>
-                <BrowserRouter>
-                    <Layout>
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/sign-up" element={<Signup />} />
-                            <Route path="/sign-in" element={<Signin />} />
-                            <Route path="/admin" element={<Admin />} />
-                            <Route path="/user" element={<User />} />
-                            <Route path="/about-us" element={<AboutUs />} />
-                            <Route path="cinema" element={<Cinema />} />
-                            <Route path="/info" element={<Info />} />
-                        </Routes>
-                    </Layout>
-                </BrowserRouter>
-            </dataContext.Provider>
-            <ToastContainer />
-        </div>
-    );
+  return (
+    <div className="App">
+      <dataContext.Provider value={"123"}>
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/sign-up" element={<Signup />} />
+              <Route path="/sign-in" element={<Signin />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/user" element={<User />} />
+              <Route path="/about-us" element={<AboutUs />} />
+              <Route path="cinema" element={<Cinema />} />
+              <Route path="/info" element={<Info />} />
+              <Route path="*" element={<Error_404 />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </dataContext.Provider>
+      <ToastContainer />
+    </div>
+  );
 }
 
 export default App;
