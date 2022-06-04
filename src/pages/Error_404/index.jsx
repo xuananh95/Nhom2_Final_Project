@@ -8,7 +8,7 @@ const Error_404 = () => {
   return (
     <SError>
       <div className="error-container">
-      <h1 className="error-header">!404!</h1>
+      <h1 className="error-header" style={{fontSize: 90}}>!404!</h1>
       <h2 className="error-header">Bạn có đang đi lạc không?</h2>
         <h4 className='error-message'>Xin lỗi, chúng tôi không thể tìm thấy trang bạn yêu cầu  <FaSadCry fontSize={35} /></h4>
         

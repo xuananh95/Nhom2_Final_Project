@@ -9,7 +9,7 @@ export const SUser = styled.div`
     margin: 0 auto;
     margin-top: 20px;
     width: 100%;
-    max-width: 700px;
+    max-width: 1000px;
     background-color: rgba(9, 11, 16, 0.8);
     color: white;
     border: 1px solid rgb(55, 120, 232);
@@ -74,14 +74,15 @@ export const SUser = styled.div`
       min-height: 320px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
+      font-size: 23px;
       .btn-group {
         width: 100%;
         margin-top: 25px;
         margin-bottom: 5px;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
       }
 
       .profile-images {
@@ -136,11 +137,13 @@ export const SUser = styled.div`
   .user-history {
     margin-top: 20px;
     width: 100%;
-    max-width: 700px;
+    max-width: 1000px;
     border: 1px solid rgb(55, 120, 232);
     border-radius: 5px;
     text-align: center;
     background-color: rgba(9, 11, 16, 0.8);
     padding: 10px;
+    font-size: 23px;
+    margin-bottom: 45px;
   }
 `;
