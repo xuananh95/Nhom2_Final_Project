@@ -87,6 +87,10 @@
     font-size: 20px;
 }
 
+.header-search:hover {
+    color: rgb(167, 196, 245);
+}
+
 .header-search > form > input {
     outline: none;
     border: none;
@@ -105,6 +109,10 @@
     text-align: center;
 }
 
+.header-search > form > button:hover {
+    background-color: rgb(167, 196, 245, 0.5);
+}
+
 .header-account {
     display: flex;
     align-items: center;
@@ -119,6 +127,10 @@
 .account-link {
     padding: 10px 20px;
     min-width: fit-content;
+}
+
+.account-link:hover {
+    color: rgb(167, 196, 245);
 }
 
 .sign-up-link {

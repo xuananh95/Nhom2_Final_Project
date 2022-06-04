@@ -18,7 +18,7 @@ const Header = () => {
   console.log(searchResults)
 
   let activeStyle = {
-    color: "rgb(255, 107, 77)",
+    color: "rgb(167, 196, 245)",
   }
 
   const [currentUser, setCurrentUser] = useState(null);
@@ -52,7 +52,7 @@ const Header = () => {
 
   const showSearch = () => {
     return searchResults.map((d) => {
-      return <li className='search-list'>
+      return <li key={d.id} className='search-list'>
         <h4>{d.title}</h4>
         <small>{d.tagline}</small>
       </li>
