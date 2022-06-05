@@ -1,5 +1,6 @@
 .film-list{
-    margin-bottom: 20px;
+   width: 276px;
+    margin: 0 0 20px 0;
 }
 img{
     width: 100%;
@@ -8,41 +9,78 @@ img{
 }
 .product-image{
     position: relative;
+    width: 276px;
 }
 .trailer{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80%;
+    height: 85%;
     cursor: pointer;
 }
 .details{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 20%;
-    background:  rgba(0, 0, 0, 0.8);;
+    height: 15%;
+    position: absolute;
+    top: calc(100% + 10px);
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
 }
-.info,.ticket{
-    background: red;
+.movie-ticket-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #3778e8;
     color: white;
     padding: 5px;
     font-size: 20px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    height: 100%;
 }
 .trailer span{
     height: 50px;
     width: 50px;
-    line-height: 50px;
+    line-height: 40px;
     text-align: center;
-    background: red;
+    background: transparent;
     color: white;
-    border-radius: 10px;
+    border: 5px solid #3778e8;
+    border-radius:50%;
+    position: absolute;
+    color: #3778e8;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.product-image:hover .modal_info{
+.model_hidden{
+    display: none;
+}
+.film-list:hover .model_hidden{
     display: block;
-    /* bottom: 5px; */
 }
+.film-list:hover .trailer span{
+  
+    /* bottom: 5px; */
+    animation:topTomid linear 0.5s ;
+}
+/* .product-info{
+    width: 276px;
+} */
 .movie_name{
-    font-size: 25px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+@keyframes topTomid{
+    from{
+        top: 15%;
+        opacity: 0;
+    }
+    to{
+        top: 40%;
+        /* transform: translateY(-50%); */
+        opacity: 1;
+    }
 }

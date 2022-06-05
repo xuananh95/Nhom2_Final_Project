@@ -8,6 +8,7 @@
     height: 80px;
     background-color: rgb(9, 11, 16);
     border-bottom: 1px solid rgb(36, 43, 63);
+    z-index: 11;
 }
 
 .header-units {

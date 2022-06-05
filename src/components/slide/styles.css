@@ -1,3 +1,7 @@
+.slick-prev::before,
+.slick-next:before{
+    color: #3778e8;
+}
 .slick-prev,
 .slick-next{
     z-index: 10;
@@ -9,5 +13,21 @@
     right: 12px;
 }
 .slick-dots{
-    bottom: 12px;
+    bottom: 36px;
+}
+.wrap_slide .slick-prev,
+.wrap_slide .slick-next{
+    top: 41%;
+}
+.wrap_slide .slick-next{
+    right: -1px;
+}
+.wrap_slide .slick-prev{
+   left: -25px;
+}
+.wrap_slider_slick{
+    height: 710px;
+}
+.wrap_slider_slick .slick-slider{
+    width: 100%;
 }
