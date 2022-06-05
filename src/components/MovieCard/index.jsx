@@ -18,7 +18,7 @@ const play=()=>{
   return (
       <div className='film-list '>
         <div className='product-image'>
-           <img  src={image_path+movie.poster_path}/>
+           <img  className='product_image-poster' src={image_path+movie.poster_path}/>
            <div className='modal_info model_hidden'>
              <div className='trailer' onClick={play}>
                <span><BsFillPlayFill/></span>
