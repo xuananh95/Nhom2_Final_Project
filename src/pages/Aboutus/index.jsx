@@ -1,15 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import './styles.css'
+import {RiTeamFill} from 'react-icons/ri'
+import {GiCharacter} from 'react-icons/gi'
 
 const AboutUs = () => {
   return (
     <About>
       <div className='about-container'>
-        <h2 style={{textAlign: 'center'}}>Website mua vé xem phim TICKET</h2>
-        <h4>Tên nhóm: Team 2 (Nhóm 3)</h4>
+        <h2 style={{textAlign: 'center', color: 'rgb(55, 120, 232)'}}>Website mua vé xem phim TICKETS</h2>
+        <h4><RiTeamFill/> Tên nhóm: Team 2 (Nhóm 3)</h4>
         <div className='members'>
-          <h4>Thành viên nhóm:</h4>
+          <h4><GiCharacter/> Thành viên nhóm:</h4>
           <ul>
             <li>Võ Xuân Anh (Leader)</li>
             <li>Đoàn Minh Đức</li>
@@ -55,5 +56,6 @@ const About = styled.div`
       position: absolute;
       bottom: 10px;
       right: 20px;
+      font-size: 12px;
     }
 `
