@@ -12,7 +12,7 @@ const play=()=>{
 }
   const handlePlay=()=>{
     localStorage.setItem('itemInfo',JSON.stringify(movie))
-     navigate('/info')
+    navigate('/info')
   }
   return (
       <div className='film-list col l-3'>

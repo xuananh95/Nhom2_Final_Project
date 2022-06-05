@@ -13,13 +13,9 @@ const Header = () => {
   const [data, setData] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [searchInput, setSearchInput] = useState('')
-
   console.log(data)
-  console.log(searchResults)
-
   let activeStyle = {
-    color: "rgb(255, 107, 77)",
-
+    color: "rgb(167, 196, 245)",
   }
 
   const [currentUser, setCurrentUser] = useState(null);
@@ -34,6 +30,7 @@ const Header = () => {
   useEffect(() => {
     const current = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')) : null;
     setCurrentUser(current);
+    setSearchDisplay(false);
   }, [location]);
 
   const handleLogout = () => {
@@ -51,11 +48,21 @@ const Header = () => {
     } else {setSearchResults([])}
   }
 
+  const image_path='https://image.tmdb.org/t/p/w500'
   const showSearch = () => {
     return searchResults.map((d) => {
-      return <li className='search-list'>
-        <h4>{d.title}</h4>
-        <small>{d.tagline}</small>
+      const handleClick = () => {
+        setSearchInput('')
+        setSearchResults([])
+        localStorage.setItem('itemInfo', JSON.stringify(d))
+        navigate('/info')
+      }
+      return <li key={d.id} className='search-list' onClick={handleClick} style={{display: 'flex', gap: '5px'}}>
+        <img src={image_path + d.poster_path} style={{width:'20%', height:'auto'}}></img>
+        <div style={{width: '80%'}}>
+          <h5 style={{color: 'rgb(55, 120, 232)'}}>{d.title}</h5>
+          <small style={{color: 'gray'}}>{d.tagline}</small>
+        </div>
       </li>
     })
   }
@@ -75,10 +82,10 @@ const Header = () => {
         <div className='header-search header-units'>
           {!searchDisplay ? <div onClick={() => setSearchDisplay(!searchDisplay)}><BsSearch/></div> : (
           <form style={{position: 'relative'}}>
-            <input type='search' placeholder='Search' value={searchInput} onChange={(e) => handleSearch(e)}></input>
+            <input type='search' placeholder='Tìm kiếm' value={searchInput} onChange={(e) => handleSearch(e)}></input>
             <button onClick={() => {setSearchDisplay(!searchDisplay); setSearchInput(''); setSearchResults([])}}><IoCloseSharp/></button>
             {searchResults.length > 0 ? (
-            <SearchDropdown>
+            <SearchDropdown className='search-dropdown'>
               <ul>{showSearch()}</ul>
             </SearchDropdown>
             ) : null}
@@ -112,20 +119,36 @@ export default Header
 
 const SearchDropdown = styled.div`
   position: absolute;
-  width: 300px;
+  width: 400px;
   height: fit-content;
-  max-height: 300px;
-  background-color: white;
-  color: black;
+  max-height: 400px;
+  background-color: rgb(15, 21, 31, 0.8);
+  background-image: linear-gradient(to right, rgb(15, 20, 30, 0.85), rgb(20, 27, 43, 0.8), rgb(23, 30, 47, 0.75));
+  border: 1px solid rgb(108, 135, 154, 0.8);
   border-radius: 5px;
   overflow-y: scroll;
-  padding: 5px;
+  padding: 10px;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgb(55, 120, 232);
+  }
 
   .search-list {
+    color: white;
     list-style-type: none;
     margin-bottom: 5px;
-    border: 1px solid gray;
     border-radius: 5px;
     padding: 5px;
+    background-color: rgba(24, 40, 60, 0.9);
+  }
+
+  .search-list:hover {
+    background-color: rgba(38, 56, 79, 0.9);
   }
 `

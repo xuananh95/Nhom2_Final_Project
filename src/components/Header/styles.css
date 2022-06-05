@@ -23,7 +23,7 @@
     text-decoration: none;
     color: white;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 35px;
     color: rgb(55, 120, 232);
     font-family: 'Kaushan Script', cursive;
     font-family: 'Creepster', cursive;
@@ -36,25 +36,25 @@
 .header-menu {
     cursor: pointer;
     position: relative;
-    padding: 25px;
+    padding: 25px 36px;
     color: whitesmoke;
-    font-size: 27px;
+    font-size: 30px;
 }
 
 .dropdown-menu {
     position: absolute;
-    top: 50px;
-    left: -12px;
+    top: 62px;
+    left: -25px;
     background-color: whitesmoke;
     display: none;
     flex-direction: column;
-    width: 100px;
+    width: 150px;
     height: fit-content;
     padding: 20px 10px;
     border-radius: 5px;
     border: 1px solid rgb(50, 50, 50);
     gap: 8px;
-    font-size: 13px;
+    font-size: 17px;
     scale: 0;
     z-index: 11;
 }
@@ -84,6 +84,11 @@
     display: flex;
     position: relative;
     color: white;
+    font-size: 20px;
+}
+
+.header-search:hover {
+    color: rgb(167, 196, 245);
 }
 
 .header-search > form > input {
@@ -91,7 +96,7 @@
     border: none;
     border-radius: 10px;
     padding: 7px;
-    min-width: 300px;
+    min-width: 400px;
 }
 
 .header-search > form > button {
@@ -103,6 +108,14 @@
     border-radius: 50%;
     text-align: center;
 }
+
+.header-search > form > button:hover {
+    background-color: rgb(167, 196, 245, 0.5);
+}
+
+/* .search-dropdown::-webkit-scrollbar {
+
+} */
 
 .header-account {
     display: flex;
@@ -118,6 +131,10 @@
 .account-link {
     padding: 10px 20px;
     min-width: fit-content;
+}
+
+.account-link:hover {
+    color: rgb(167, 196, 245);
 }
 
 .sign-up-link {

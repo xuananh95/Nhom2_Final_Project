@@ -1,4 +1,5 @@
 import React,{useState, useContext ,useEffect} from 'react'
+import { useLocation } from 'react-router-dom'
 import { dataContext } from '../../App'
 import './style.css'
 const Info = () => {
@@ -13,6 +14,16 @@ const Info = () => {
     setCast(datasCast.cast)
     setCrew(datasCast.crew)
 }
+
+  // -- code của chức năng tim kiếm --
+  const location = useLocation()
+  const [locationKey, setLocationKey] = useState(location.key)
+  useEffect(() => {
+    setLocationKey(location.key)
+    console.log(locationKey)
+  }, [location.key])
+  // ---------------------------------
+
   useEffect(()=>{
     fetchdata1()
   },[])
