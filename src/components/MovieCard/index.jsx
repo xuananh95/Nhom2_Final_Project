@@ -1,5 +1,6 @@
 import React,{ useEffect ,useState,createContext} from 'react'
 import { useNavigate } from 'react-router-dom'
+import {BsFillPlayFill} from 'react-icons/bs'
 import './style.css'
 const MovieCart = ({handlesetAdd,setIdMovie,setCheck,movie,image_path}) => {
   const [image,setImage]=useState('')
@@ -15,16 +16,15 @@ const play=()=>{
     navigate('/info')
   }
   return (
-      <div className='film-list col l-3'>
+      <div className='film-list '>
         <div className='product-image'>
            <img  src={image_path+movie.poster_path}/>
-           <div className='modal_info'>
+           <div className='modal_info model_hidden'>
              <div className='trailer' onClick={play}>
-               <span>Play</span>
+               <span><BsFillPlayFill/></span>
              </div>
              <div className='details'>
-               <div className='info' onClick={handlePlay}>Xem Chi Tiết</div>
-               <div className='ticket'>Mua Vé</div>
+               <div className='movie-ticket-btn'onClick={handlePlay}>Mua Vé</div>
              </div>
            </div>
         </div>

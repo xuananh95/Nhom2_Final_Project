@@ -1,6 +1,6 @@
 import React,{ useState ,useEffect} from 'react'
 
-const Newdata = ({data}) => {
+const Newdata = ({data,result}) => {
     const [trailer,setTrailer]=useState(null)
     const fetchTrailer=async ()=>{
       const datas=await fetch(`https://api.themoviedb.org/3/movie/${data.id}?api_key=61349b2f1730137c30a1c9d2f3fa8d68&append_to_response=videos`)
@@ -16,9 +16,7 @@ const Newdata = ({data}) => {
      
     },[])
     
-  return (
-    <div></div>
-  )
+  return 
 }
 
 export default Newdata

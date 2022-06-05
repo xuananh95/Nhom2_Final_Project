@@ -1,8 +1,11 @@
 import React,{useState, useContext ,useEffect} from 'react'
 import { useLocation } from 'react-router-dom'
 import { dataContext } from '../../App'
+import {AiOutlineHome} from 'react-icons/ai'
+import { Link,useNavigate } from 'react-router-dom'
 import './style.css'
 const Info = () => {
+  const navigate=useNavigate()
   const image_path='https://image.tmdb.org/t/p/w500'
   const [cast,setCast]=useState([])
   const [crew,setCrew]=useState([])
@@ -25,15 +28,25 @@ const Info = () => {
   // ---------------------------------
 
   useEffect(()=>{
+    window.scrollTo(0,0);
     fetchdata1()
   },[])
+  const Booking=()=>{
+    !(localStorage.getItem('currentUser'))?navigate('/sign-in'):navigate('/booking')
+    
+  }
     let allCast=cast.filter((cast,index)=>index<5)
     let directs=crew.filter((crew)=>{
         return crew.known_for_department=='Directing'
     })
+    console.log(allCast)
   return (
     <div className='wrap_info '>
-      <h1>Nội Dung Phim</h1>
+      <div className="infoToHome">
+      <Link to={'/'} className='infoToHome_link'><AiOutlineHome /></Link>
+      <span>{'>'}</span>
+      <h3>{movieItem.title}</h3>
+      </div>
       <div className='information '>
         <div className='avatar'>
           <img className='img_info' src={image_path+ movieItem.poster_path} alt="" />
@@ -98,18 +111,25 @@ const Info = () => {
                <div className="content">{movieItem.runtime} Phút</div>
             </div>
           </div>
+          <div className='product-BooKing' onClick={Booking}>Mua Vé Ngay</div>
         </div>
+
     </div>
     <div className='review'>
-      {movieItem.overview}
+      <h3>Tổng Quan</h3>
+      <div className='movieItem_overview'>{movieItem.overview}</div>
     </div>
-    <div className='avatar-cast'>
+    {/* <div className='avatar-cast'>
       {allCast.map(cast=>{
-        return <div className='profile_path'>
-          <img src={image_path+cast.profile_path} alt="" />
+        return <div className='profile_cast'>
+          <img className='profile_path' src={image_path+cast.profile_path} alt="" />
+          <div className="profile_name">
+            <h3>{cast.name}</h3>
+            <span>{cast.character}</span>
+          </div>
         </div>
       })}
-    </div>
+    </div> */}
     </div>
   )
 }

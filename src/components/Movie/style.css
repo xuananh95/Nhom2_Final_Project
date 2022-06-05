@@ -12,6 +12,7 @@
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
+    z-index: 12;
 }
 .video{
 width: 100%;
@@ -21,7 +22,7 @@ justify-content: center;
 align-items: center;
 }
 .slideshow_container{
-    height: 400px;
+    height: 710px;
     margin-bottom: 15px;
 }
 .tab_content{
@@ -32,43 +33,66 @@ align-items: center;
 }
 .status{
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 10px 0 40px;
 }
 .detail_movie{
     display: flex;
-    position: absolute;
+    /* position: absolute;
     top: 65%;
-    left: 5%;
+    left: 5%; */
 }
 .traile_movie,
 .info_movie{
     width: 100px;
     height: 40px;
-    border: 1px solid white;
     display: flex;
+    border: 1px solid #3778e8;
+    color: #3778e8;
     align-items: center;
     justify-content: center;
     margin-right: 25px;
     background: rgba(0, 0, 0, 1);
     border-radius: 10px;
     cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.traile_movie{
+    background: #3778e8;
+    color: #000;
+}
+.info_movie:active{
+    color: #3778e8;
+}
+.middle{
+    width: 3px;
+    height: 21px;
+    background: #3778e8;
+    margin-left: 10px;
 }
 .now_showing,
 .coming_soon{
-    border-bottom: 1px solid white;
+    color: #3778e8;
     padding-bottom: 5px;
+    cursor: pointer;
 }
 .coming_soon{
     margin-left: 10px;
 }
+.active_comingson{
+    border-bottom: 1px solid #3778e8;
+}
 .wrap_slide{
-    overflow: hidden;
     height: 100%;
+    width: 100%;
     position: absolute;
 }
 .img_container{
     margin: 0 auto;
-    height: 400px;
+    height: 710px;
     position: relative;
 }
 .slide_img{
@@ -82,19 +106,24 @@ align-items: center;
     right: 0;
     bottom: 0;
     color: white;
-    /* background: rgba(0, 0, 0, 0.1); */
-    display: none;
+    background: linear-gradient(50deg,#000,rgba(0,0,0,.8) 40%,transparent);
+    /* display: none; */
 }
-.modal_info h1{
+.wrap_detail_movie{
     position: absolute;
-    top: 75%;
-    font-size: 40px;
-    left: 5%;
+   width: 371px;
+   top: 50%;
+   left: 110px;
+   transform: translateY(-50%);
+   overflow: hidden;
+}
+.detail_movie-name{
+    font-size: 30px;
 }
 #left,#right{
     position: absolute;
     height: 30px;
-    background: red;
+    background: #3778e8;
     top: 50%;
     transform: translateY(-50%);
     line-height: 30px;
@@ -105,5 +134,13 @@ align-items: center;
 }
 #right{
     right: 6px;
+}
+@keyframes show{
+    from{
+        left: 100%;
+    }
+    to{
+        left: 0;
+    }
 }
 
