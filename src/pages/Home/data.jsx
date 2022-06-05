@@ -34,7 +34,22 @@ const Home = () => {
 		}
   }
    let data=[...result,...comingSoon]
-   var Alldata = Array.from(new Set(data.map(JSON.stringify))).map(JSON.parse);
+    // var Alldata = Array.from(new Set(data.map(JSON.stringify))).map(JSON.parse);
+  function getUnique(arr, comp) {
+
+    const unique = arr
+      .map(e => e[comp])
+  
+       // store the keys of the unique objects
+      .map((e, i, final) => final.indexOf(e) === i && i)
+  
+      // eliminate the dead keys & store unique objects
+      .filter(e => arr[e]).map(e => arr[e]);
+  
+     return unique;
+  }
+  const Alldata= getUnique(data,'id')
+   console.log(Alldata[3],Alldata[20])
   return (
     <div>
       {Alldata&&Alldata.map((data) => {

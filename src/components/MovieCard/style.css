@@ -2,7 +2,7 @@
    width: 276px;
     margin: 0 0 20px 0;
 }
-img{
+.product_image-poster{
     width: 100%;
     height: 350px;
     object-fit: cover;
