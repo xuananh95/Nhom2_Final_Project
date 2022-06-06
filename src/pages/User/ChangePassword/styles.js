@@ -28,11 +28,14 @@ export const SChangePwd = styled.form`
     flex-direction: row;
     justify-content: center;
     padding: 10px;
+<<<<<<< HEAD
     button {
       width: 150px;
       height: 50px;
       font-size: 23px;
       margin-left: 5px;
     }
+=======
+>>>>>>> fd48fb0555e1f3eb5537fc722cd1036dc1a4dcbe
   }
 `;

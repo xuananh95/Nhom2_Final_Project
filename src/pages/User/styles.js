@@ -34,8 +34,11 @@ export const SUser = styled.div`
           cursor: pointer;
           height: 150px;
           width: 150px;
+<<<<<<< HEAD
           border-radius: 50%;
           border: 1px solid rgb(55, 120, 232);
+=======
+>>>>>>> fd48fb0555e1f3eb5537fc722cd1036dc1a4dcbe
         }
         .ava {
           position: absolute;
@@ -45,7 +48,11 @@ export const SUser = styled.div`
           box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.35);
           border-radius: 50%;
           z-index: 0;
+<<<<<<< HEAD
           border: 1px solid rgb(55, 120, 232);
+=======
+          border: 1px solid black;
+>>>>>>> fd48fb0555e1f3eb5537fc722cd1036dc1a4dcbe
         }
         &:hover {
           .-label {
@@ -75,20 +82,33 @@ export const SUser = styled.div`
       min-height: 320px;
       display: flex;
       flex-direction: column;
+<<<<<<< HEAD
       align-items: flex-start;
       justify-content: center;
       font-size: 23px;
+=======
+      align-items: center;
+      justify-content: center;
+>>>>>>> fd48fb0555e1f3eb5537fc722cd1036dc1a4dcbe
       .btn-group {
         width: 100%;
         margin-top: 25px;
         margin-bottom: 5px;
         display: flex;
+<<<<<<< HEAD
         justify-content: center;
+=======
+        justify-content: space-around;
+>>>>>>> fd48fb0555e1f3eb5537fc722cd1036dc1a4dcbe
       }
 
       .profile-images {
         position: absolute;
+<<<<<<< HEAD
         width: 600px;
+=======
+        width: 400px;
+>>>>>>> fd48fb0555e1f3eb5537fc722cd1036dc1a4dcbe
         padding: 5px;
         height: 300px;
         display: flex;
@@ -99,6 +119,7 @@ export const SUser = styled.div`
         box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
         .images-header {
           width: 100%;
+<<<<<<< HEAD
           /* display: flex;
           flex-direction: row;
           align-items: center;
@@ -111,11 +132,24 @@ export const SUser = styled.div`
           .exit {
             cursor: pointer;
             /* display: flex;
+=======
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          h2 {
+            flex: 5;
+            text-align: right;
+          }
+          .exit {
+            cursor: pointer;
+            display: flex;
+>>>>>>> fd48fb0555e1f3eb5537fc722cd1036dc1a4dcbe
             justify-content: flex-end;
             margin-left: 5px;
             flex: 1;
             width: 100%;
             display: flex;
+<<<<<<< HEAD
             justify-content: flex-end; */
             position: absolute;
             top: 15px;
@@ -123,6 +157,9 @@ export const SUser = styled.div`
           }
           .exit:hover {
             color: orange;
+=======
+            justify-content: flex-end;
+>>>>>>> fd48fb0555e1f3eb5537fc722cd1036dc1a4dcbe
           }
         }
         .image-row {
@@ -138,11 +175,14 @@ export const SUser = styled.div`
             .pic {
               border-radius: 50%;
             }
+<<<<<<< HEAD
             .pic:hover {
               transform: scale(1.3);
               color: rgba(0, 0, 0, 0.5);
               z-index: -1;
             }
+=======
+>>>>>>> fd48fb0555e1f3eb5537fc722cd1036dc1a4dcbe
           }
         }
       }
@@ -151,13 +191,20 @@ export const SUser = styled.div`
   .user-history {
     margin-top: 20px;
     width: 100%;
+<<<<<<< HEAD
     max-width: 1000px;
+=======
+    max-width: 700px;
+>>>>>>> fd48fb0555e1f3eb5537fc722cd1036dc1a4dcbe
     border: 1px solid rgb(55, 120, 232);
     border-radius: 5px;
     text-align: center;
     background-color: rgba(9, 11, 16, 0.8);
     padding: 10px;
+<<<<<<< HEAD
     font-size: 23px;
     margin-bottom: 45px;
+=======
+>>>>>>> fd48fb0555e1f3eb5537fc722cd1036dc1a4dcbe
   }
 `;
