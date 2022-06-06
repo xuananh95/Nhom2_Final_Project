@@ -1,6 +1,7 @@
 import React,{ useEffect ,useState,createContext} from 'react'
 import { useNavigate } from 'react-router-dom'
 import './style.css'
+import { Route, Routes } from 'react'
 const MovieCart = ({handlesetAdd,setIdMovie,setCheck,movie,image_path}) => {
   const [image,setImage]=useState('')
   const [cast,setCast]=useState([])
@@ -14,6 +15,10 @@ const play=()=>{
     localStorage.setItem('itemInfo',JSON.stringify(movie))
      navigate('/info')
   }
+  const handleBook=()=>{
+    localStorage.setItem('itemBook',JSON.stringify(movie))
+     navigate('/booking')
+  }
   return (
       <div className='film-list col l-3'>
         <div className='product-image'>
@@ -24,7 +29,7 @@ const play=()=>{
              </div>
              <div className='details'>
                <div className='info' onClick={handlePlay}>Xem Chi Tiết</div>
-               <div className='ticket'>Mua Vé</div>
+               <div className='ticket' onClick={handleBook} >Mua Vé</div>
              </div>
            </div>
         </div>

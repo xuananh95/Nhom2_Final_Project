@@ -14,7 +14,7 @@ import Movie from "./components/Movie";
 import Info from "./pages/Info";
 import Home from "./pages/Home/data";
 import Error_404 from "./pages/Error_404";
-
+import Booking from "./pages/Booking";
 export const dataContext = createContext("");
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
               <Route path="cinema" element={<Cinema />} />
               <Route path="/info" element={<Info />} />
               <Route path="*" element={<Error_404 />} />
-              <Route path="/booking" element={<Cinema />} />
+              <Route path="/booking" element={<Booking />} />
             </Routes>
           </Layout>
         </BrowserRouter>
