@@ -14,7 +14,7 @@ const AboutUs = () => {
           <ul>
             <li>Võ Xuân Anh (Leader)</li>
             <li>Đoàn Minh Đức</li>
-            <li>...Tuấn</li>
+            <li>Hà Xuân Tuấn</li>
             <li>Hoàng Đức Khánh</li>
           </ul>
         </div>
