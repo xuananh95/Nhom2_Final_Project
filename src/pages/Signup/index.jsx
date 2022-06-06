@@ -77,10 +77,10 @@ const Signup = () => {
 
     return (
         <SForm onSubmit={handleRegister}>
-            <h1 className="text">Register</h1>
-            <Input label="Tên đăng nhập" value={username} onChange={(e) => setUser({ ...user, username: e.target.value })} el={(<FaUserAlt color="black" style={{marginRight:"10px"}} />)} />
-            <Input label="Mật khẩu" value={password} onChange={(e) => setUser({ ...user, password: e.target.value })} inputType="password" el={(<RiLockPasswordFill color="black" style={{marginRight:"10px"}} />)}  />
-            <Input label="Xác nhận mật khẩu" value={confirmation} onChange={(e) => setUser({ ...user, confirmation: e.target.value })} inputType="password" el={(<RiLockPasswordFill color="black" style={{marginRight:"10px"}} />)}  />
+            <h1 className="text">Đăng ký tài khoản</h1>
+            <Input label="Tên đăng nhập" value={username} onChange={(e) => setUser({ ...user, username: e.target.value })} el={(<FaUserAlt color="white" style={{marginRight:"10px"}} />)} />
+            <Input label="Mật khẩu" value={password} onChange={(e) => setUser({ ...user, password: e.target.value })} inputType="password" el={(<RiLockPasswordFill color="white" style={{marginRight:"10px"}} />)}  />
+            <Input label="Xác nhận mật khẩu" value={confirmation} onChange={(e) => setUser({ ...user, confirmation: e.target.value })} inputType="password" el={(<RiLockPasswordFill color="white" style={{marginRight:"10px"}} />)}  />
             <Link to="/sign-in">Bạn đã có tài khoản? Đăng nhập ngay!</Link>
             <div className="button-group">
                 <Button text="Đăng ký" color="blue" action={handleRegister} />
@@ -92,22 +92,38 @@ const Signup = () => {
 export default Signup
 
 export const SForm = styled.form`
-    background-color: white;
+    background-color: rgba(9, 11, 16, 0.8);
     width: 100%;
-    max-width: 400px;
+    max-width: 700px;
     margin: 0 auto;
     margin-top: 20px;
     padding: 10px 20px;
     border-radius: 5px;
-    box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
-    
+    color: white;
+    font-size: 23px;
     .text{
         text-align: center;
-        color: black;
+        margin-bottom: 20px;
+    }
+    label {
+        color: white;
+    }
+    input {
+        margin-bottom: 10px;
+    }
+    a {
+        color: white;
+        font-size: 27px;
     }
     .button-group{
         display: flex;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 25px;
+        button {            
+            width: 150px;
+            height: 50px;
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
     }
 `;
