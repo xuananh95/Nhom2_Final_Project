@@ -38,6 +38,8 @@ const SignIn = () => {
             return;
         }
         toast.success('Đăng nhập thành công!!!');
+        const newUsers = users.map(user => user.id === findUser.id ? {...user, lastSignedInAt: new Date()} : user);
+        localStorage.setItem('users', JSON.stringify(newUsers));
         localStorage.setItem('currentUser', JSON.stringify(findUser));
         navigate('../', { replace: true });
     }
