@@ -16,7 +16,6 @@ export const SUser = styled.div`
     min-height: 378px;
     display: flex;
     flex-direction: row;
-    /* justify-content: space-between; */
     align-items: center;
     border-radius: 5px;
     .item-left {
@@ -35,6 +34,8 @@ export const SUser = styled.div`
           cursor: pointer;
           height: 150px;
           width: 150px;
+          border-radius: 50%;
+          border: 1px solid rgb(55, 120, 232);
         }
         .ava {
           position: absolute;
@@ -44,7 +45,7 @@ export const SUser = styled.div`
           box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.35);
           border-radius: 50%;
           z-index: 0;
-          border: 1px solid black;
+          border: 1px solid rgb(55, 120, 232);
         }
         &:hover {
           .-label {
@@ -87,7 +88,7 @@ export const SUser = styled.div`
 
       .profile-images {
         position: absolute;
-        width: 400px;
+        width: 600px;
         padding: 5px;
         height: 300px;
         display: flex;
@@ -98,22 +99,30 @@ export const SUser = styled.div`
         box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
         .images-header {
           width: 100%;
-          display: flex;
+          /* display: flex;
           flex-direction: row;
           align-items: center;
+          justify-content: center; */
+          text-align: center;
           h2 {
-            flex: 5;
-            text-align: right;
+            /* flex: 5; */
+            /* text-align: center; */
           }
           .exit {
             cursor: pointer;
-            display: flex;
+            /* display: flex;
             justify-content: flex-end;
             margin-left: 5px;
             flex: 1;
             width: 100%;
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-end; */
+            position: absolute;
+            top: 15px;
+            right: 10px;
+          }
+          .exit:hover {
+            color: orange;
           }
         }
         .image-row {
@@ -128,6 +137,11 @@ export const SUser = styled.div`
             margin: 5px;
             .pic {
               border-radius: 50%;
+            }
+            .pic:hover {
+              transform: scale(1.3);
+              color: rgba(0, 0, 0, 0.5);
+              z-index: -1;
             }
           }
         }

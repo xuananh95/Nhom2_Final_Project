@@ -19,6 +19,7 @@ export const SChangePwd = styled.form`
   }
   input {
     margin-bottom: 10px;
+    font-size: 23px;
   }
   .btn-group {
     margin: 20px;

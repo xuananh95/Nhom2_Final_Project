@@ -1,5 +1,5 @@
 .footer {
-    display: none;
+    display: block;
     position: absolute;
     bottom: -270px;
     left: 0;

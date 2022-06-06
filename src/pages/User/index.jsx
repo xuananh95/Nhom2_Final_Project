@@ -87,7 +87,7 @@ const User = () => {
                                             <div className="images-header">
                                                 <h2>CHỌN ẢNH ĐẠI DIỆN</h2>
                                                 <div className="exit" onClick={() => setShowChangeImages(false)}>
-                                                    <GiCancel />
+                                                    <GiCancel fontSize={"30px"} />
                                                 </div>
                                             </div>
                                             <div className="image-row">
