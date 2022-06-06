@@ -103,7 +103,7 @@ export const SForm = styled.form`
     padding: 10px 20px;
     border-radius: 5px;
     color: white;
-    font-size: 23px;
+    font-size: 1.5rem;
     border: 1px solid rgb(55, 120, 232);
     .text{
         text-align: center;
@@ -114,11 +114,11 @@ export const SForm = styled.form`
     }
     input {
         margin-bottom: 10px;
-        font-size: 23px;
+        font-size: 1.5rem;
     }
     a {
         color: white;
-        font-size: 27px;
+        font-size: 2rem;
     }
     .button-group{
         display: flex;
@@ -128,7 +128,7 @@ export const SForm = styled.form`
         button {            
             width: 150px;
             height: 50px;
-            font-size: 23px;
+            font-size: 1.5rem;
             margin-bottom: 15px;
         }
 =======

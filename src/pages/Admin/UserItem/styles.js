@@ -15,6 +15,8 @@ export const SUserItem = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+    border: 1px solid rgb(55, 120, 232);
+    border-radius: 5px;
     .item-left {
       flex: 1;
       text-align: center;
@@ -51,7 +53,7 @@ export const SUserItem = styled.div`
           background-color: #1b77f0;
           border-radius: 5px;
           padding: 10px;
-          font-size: 16px;
+          font-size: 1rem;
         }
         button:hover {
           transform: scale(1.1);
@@ -72,7 +74,7 @@ export const SUserItem = styled.div`
           width: 100%;
           max-width: 600px;
           margin: 0 auto;
-          font-size: 18px;
+          font-size: 1rem;
         }
       }
       .delete {

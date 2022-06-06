@@ -5,7 +5,7 @@ export const SUserInfo = styled.div`
     display: flex;
     flex-direction: row;
     .info-row-title {
-      padding-left: 60px;
+      padding-left: 30px;
       flex: 1;
       font-weight: bold;
       display: flex;
@@ -14,7 +14,7 @@ export const SUserInfo = styled.div`
     .info-row-value {
       /* margin-left: 35px; */
       flex: 1;
-      padding-right: 60px;
+      padding-right: 30px;
     }
   }
 `;

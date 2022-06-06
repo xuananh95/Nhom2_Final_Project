@@ -6,6 +6,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html {
+    font-size: 100%;
+}
+
 body{
     /* background: black; */
     background-image:url('https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/movie-details-bg.jpg') ;
@@ -449,6 +453,9 @@ body{
 
 /* Tablet - PC low resolution */
 @media (min-width: 740px) and (max-width: 1023px) {
+    html{
+        font-size: 12px;
+    }
   .wide {
       width: 644px;
   }
