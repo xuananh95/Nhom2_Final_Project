@@ -67,6 +67,8 @@ const Signup = () => {
             gender: '',
             dob: '',
             image: 'default.jpg',
+            createdAt: new Date(),
+            lastSignedInAt: '',
         }
         localStorage.setItem('users', JSON.stringify([...users, newUser]));
         toast.success('Đăng ký tài khoản thành công!');
