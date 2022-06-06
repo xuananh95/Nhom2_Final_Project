@@ -8,7 +8,7 @@ export const SChangePwd = styled.form`
   margin-top: 20px;
   padding: 10px 20px;
   border-radius: 5px;
-  font-size: 23px;
+  font-size: 1.5rem;
   h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -19,7 +19,7 @@ export const SChangePwd = styled.form`
   }
   input {
     margin-bottom: 10px;
-    font-size: 23px;
+    font-size: 1.5rem;
   }
   .btn-group {
     margin: 20px;
@@ -31,7 +31,7 @@ export const SChangePwd = styled.form`
     button {
       width: 150px;
       height: 50px;
-      font-size: 23px;
+      font-size: 1.5rem;
       margin-left: 5px;
     }
   }

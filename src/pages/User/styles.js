@@ -77,7 +77,7 @@ export const SUser = styled.div`
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      font-size: 23px;
+      font-size: 1.5rem;
       .btn-group {
         width: 100%;
         margin-top: 25px;
@@ -157,7 +157,7 @@ export const SUser = styled.div`
     text-align: center;
     background-color: rgba(9, 11, 16, 0.8);
     padding: 10px;
-    font-size: 23px;
+    font-size: 1.5rem;
     margin-bottom: 45px;
   }
 `;

@@ -13,7 +13,7 @@ export const SError = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 25px;
+    font-size: 1.5rem;
     padding: 40px;
     background-color: rgba(9, 11, 16, 0.8);
     border: 1px solid rgb(55, 120, 232);
@@ -21,12 +21,12 @@ export const SError = styled.div`
     .error-message {
       margin-top: 20px;
       margin-bottom: 20px;
-      font-size: 25px;
+      font-size: 1.5rem;
     }
     a {
       color: white;
       cursor: pointer;
-      font-size: 35px;
+      font-size: 2.5rem;
     }
   }
 `;
