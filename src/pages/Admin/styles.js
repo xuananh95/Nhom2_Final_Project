@@ -14,7 +14,7 @@ export const SAdmin = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   .admin-page-title {
     display: flex;
     flex-direction: row;
@@ -23,7 +23,7 @@ export const SAdmin = styled.div`
     .admin-logo {
       margin-right: 20px;
     }
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 40px;
   }
@@ -32,7 +32,7 @@ export const SAdmin = styled.div`
     grid-template-columns: 3fr 3fr 3fr 1fr;
     width: 100%;
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: bold;
     border-radius: 5px;
     padding-bottom: 20px;

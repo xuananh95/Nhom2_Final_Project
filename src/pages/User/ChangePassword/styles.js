@@ -8,7 +8,7 @@ export const SChangePwd = styled.form`
   margin-top: 20px;
   padding: 10px 20px;
   border-radius: 5px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -19,7 +19,7 @@ export const SChangePwd = styled.form`
   }
   input {
     margin-bottom: 10px;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .btn-group {
     margin: 20px;
@@ -28,14 +28,11 @@ export const SChangePwd = styled.form`
     flex-direction: row;
     justify-content: center;
     padding: 10px;
-<<<<<<< HEAD
     button {
       width: 150px;
       height: 50px;
-      font-size: 1.5rem;
+      font-size: 1rem;
       margin-left: 5px;
     }
-=======
->>>>>>> fd48fb0555e1f3eb5537fc722cd1036dc1a4dcbe
   }
 `;

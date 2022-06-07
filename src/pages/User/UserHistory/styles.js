@@ -15,9 +15,9 @@ export const SUserHistory = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   .history-header {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
   }
   .history-flex-row {

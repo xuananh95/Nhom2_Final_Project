@@ -117,8 +117,8 @@ const User = () => {
                                     {!showChangeImages && (<div style={{width: "100%"}}><h1 style={{ margin: "15px", textAlign:"center" }}>Thông tin người dùng</h1>
                                         <UserInfo user={currentUser} />
                                         <div className="btn-group">
-                                            <SButton style={{ width: 200, height: 60, fontSize: 23, marginBottom: 20, marginRight: 20 }} onClick={handleEdit}>Sửa thông tin</SButton>
-                                            <SButton style={{ width: 200, height: 60, fontSize: 23, marginBottom: 20 }} onClick={handleChangePassword}>Đổi mật khẩu</SButton>
+                                            <SButton style={{ width: 170, height: 50, fontSize: 20, marginBottom: 20, marginRight: 20 }} onClick={handleEdit}>Sửa thông tin</SButton>
+                                            <SButton style={{ width: 170, height: 50, fontSize: 20, marginBottom: 20 }} onClick={handleChangePassword}>Đổi mật khẩu</SButton>
                                         </div></div>)}
                                 </div>
                             </>)}

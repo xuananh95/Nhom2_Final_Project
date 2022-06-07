@@ -9,7 +9,7 @@ export const SUserItem = styled.div`
   grid-template-columns: 3fr 3fr 3fr 1fr;
   text-align: center;
   margin: 25px 0;
-  font-size: 1.4rem;
+  font-size: 1rem;
   padding-bottom: 10px;
   border-bottom: 1px solid rgb(55, 120, 232);
   .user-item-user {
@@ -52,7 +52,7 @@ export const SUserItem = styled.div`
           0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
         width: 400px;
         margin: 0 auto;
-        font-size: 1rem;
+        font-size: 0.8rem;
       }
     }
   }
