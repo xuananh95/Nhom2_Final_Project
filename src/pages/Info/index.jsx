@@ -2,19 +2,25 @@ import React,{useState, useContext ,useEffect} from 'react'
 import { dataContext } from '../../App'
 import {AiOutlineHome} from 'react-icons/ai'
 import { Link,useNavigate } from 'react-router-dom'
+import Error from '../Home/error'
 import './style.css'
 const Info = () => {
   const navigate=useNavigate()
   const image_path='https://image.tmdb.org/t/p/w500'
   const [cast,setCast]=useState([])
   const [crew,setCrew]=useState([])
+  const [error,setError]=useState('')
   const movieItem=JSON.parse(localStorage.getItem('itemInfo'))
   const fetchdata1=async ()=>{
-    const dataCast=await fetch(`https://api.themoviedb.org/3/movie/${movieItem.id}/casts?api_key=61349b2f1730137c30a1c9d2f3fa8d68&append_to_response=videos`)
+    try{
+      const dataCast=await fetch(`https://api.themoviedb.org/3/movie/${movieItem.id}/casts?api_key=61349b2f1730137c30a1c9d2f3fa8d68&append_to_response=videos`)
     const datasCast=await dataCast.json()
-    console.log(datasCast)
     setCast(datasCast.cast)
     setCrew(datasCast.crew)
+    }
+    catch(err){
+       setError(err.message)
+    }
 }
   useEffect(()=>{
     window.scrollTo(0,0);
@@ -28,9 +34,9 @@ const Info = () => {
     let directs=crew.filter((crew)=>{
         return crew.known_for_department=='Directing'
     })
-    console.log(allCast)
   return (
-    <div className='wrap_info '>
+    <>
+      {error?<Error/>:<div className='wrap_info '>
       <div className="infoToHome">
       <Link to={'/'} className='infoToHome_link'><AiOutlineHome /></Link>
       <span>{'>'}</span>
@@ -108,18 +114,8 @@ const Info = () => {
       <h3>Tổng Quan</h3>
       <div className='movieItem_overview'>{movieItem.overview}</div>
     </div>
-    {/* <div className='avatar-cast'>
-      {allCast.map(cast=>{
-        return <div className='profile_cast'>
-          <img className='profile_path' src={image_path+cast.profile_path} alt="" />
-          <div className="profile_name">
-            <h3>{cast.name}</h3>
-            <span>{cast.character}</span>
-          </div>
-        </div>
-      })}
-    </div> */}
-    </div>
+    </div>}
+    </>
   )
 }
 

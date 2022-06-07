@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Movie from '../../components/Movie'
 import Newdata from '.'
+import Error from './error'
 const Home = () => {
   const [result, setResult] = useState([])
   const [comingSoon, setComingSoon] = useState([])
@@ -34,30 +35,24 @@ const Home = () => {
 		}
   }
    let data=[...result,...comingSoon]
-    // var Alldata = Array.from(new Set(data.map(JSON.stringify))).map(JSON.parse);
   function getUnique(arr, comp) {
 
     const unique = arr
       .map(e => e[comp])
-  
-       // store the keys of the unique objects
       .map((e, i, final) => final.indexOf(e) === i && i)
-  
-      // eliminate the dead keys & store unique objects
       .filter(e => arr[e]).map(e => arr[e]);
-  
      return unique;
   }
   const Alldata= getUnique(data,'id')
-   console.log(Alldata[3],Alldata[20])
   return (
-    <div>
-      {Alldata&&Alldata.map((data) => {
+    <>
+      {(errComing||error)?<Error />:<div>
+       {Alldata.map((data) => {
         return <Newdata data={data} result={result}/>
       })}
-      
       <Movie />
-    </div>
+    </div>}
+    </>
   )
 }
 

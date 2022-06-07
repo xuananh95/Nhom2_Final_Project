@@ -13,7 +13,6 @@ import Cinema from "./pages/Cinema";
 import Movie from "./components/Movie";
 import Info from "./pages/Info";
 import Home from "./pages/Home/data";
-import Booking from "./pages/Booking";
 export const dataContext = createContext("");
 
 function App() {
@@ -31,7 +30,6 @@ function App() {
                             <Route path="/about-us" element={<AboutUs />} />
                             <Route path="cinema" element={<Cinema />} />
                             <Route path="/info" element={<Info />} />
-                            <Route path="/booking" element={<Booking />} />
                         </Routes>
                     </Layout>
                 </BrowserRouter>

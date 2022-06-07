@@ -13,7 +13,6 @@ const Newdata = ({data,result}) => {
     }
     useEffect(()=>{
       fetchTrailer()
-     
     },[])
     
   return 
