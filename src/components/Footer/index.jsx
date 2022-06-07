@@ -10,8 +10,8 @@ const Footer = () => {
         <div className='footer-link'>
           <Link to='/'>Home</Link>
           <Link to='/about-us'>About Us</Link>
-          <Link to=''>Terms</Link>
-          <Link to=''>Members</Link>
+          <Link to='/feature'>Features</Link>
+          <a href='https://mindx.vn/'>School</a>
         </div>
         <p className='footer-company'> © 2022 Copyright Tickets ~ Nhóm 2 Team 3 CI74 </p>
         <div className='footer-social'>

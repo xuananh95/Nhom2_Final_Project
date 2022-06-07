@@ -9,11 +9,11 @@ import "react-toastify/dist/ReactToastify.css";
 import Admin from "./pages/Admin";
 import User from "./pages/User";
 import AboutUs from "./pages/Aboutus";
-import Cinema from "./pages/Cinema";
 import Info from "./pages/Info";
 import Home from "./pages/Home/data";
 import Error_404 from "./pages/Error_404";
 import Booking from "./pages/Booking";
+import Feature from "./pages/Feature";
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
             <Route path="/admin" element={<Admin />} />
             <Route path="/user" element={<User />} />
             <Route path="/about-us" element={<AboutUs />} />
-            <Route path="cinema" element={<Cinema />} />
+            <Route path="/feature" element={<Feature />} />
             <Route path="/info" element={<Info />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="*" element={<Error_404 />} />
