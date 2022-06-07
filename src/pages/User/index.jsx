@@ -127,7 +127,7 @@ const User = () => {
                     </div>
 
                     <div className="user-history">
-                        <h1>Lịch sử đặt vé</h1>
+                        <h1 style={{marginTop: 20}}>Lịch sử đặt vé</h1>
                         <UserHistory />
                     </div>
 

@@ -16,27 +16,27 @@ import Error_404 from "./pages/Error_404";
 import Booking from "./pages/Booking";
 
 function App() {
-    return (
-        <div className="App">
-            <BrowserRouter>
-                <Layout>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/sign-up" element={<Signup />} />
-                        <Route path="/sign-in" element={<Signin />} />
-                        <Route path="/admin" element={<Admin />} />
-                        <Route path="/user" element={<User />} />
-                        <Route path="/about-us" element={<AboutUs />} />
-                        <Route path="cinema" element={<Cinema />} />
-                        <Route path="/info" element={<Info />} />
-                        <Route path="/booking" element={<Booking />} />
-                        <Route path="*" element={<Error_404 />} />
-                    </Routes>
-                </Layout>
-            </BrowserRouter>
-            <ToastContainer />
-        </div>
-    );
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/sign-up" element={<Signup />} />
+            <Route path="/sign-in" element={<Signin />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/user" element={<User />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="cinema" element={<Cinema />} />
+            <Route path="/info" element={<Info />} />
+            <Route path="/booking" element={<Booking />} />
+            <Route path="*" element={<Error_404 />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+      <ToastContainer />
+    </div>
+  );
 }
 
 export default App;
