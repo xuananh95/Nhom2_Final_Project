@@ -4,14 +4,16 @@
 
 ### Các chức năng chính:
 
--   [ ] Đăng ký tài khoản, đăng nhập, đăng xuất
--   [ ] Phân quyền người dùng
--   [ ] Tìm kiếm phim theo tên
--   [ ] Xem thông tin và trailer phim
--   [ ] Đặt vé
+- [x] Đăng ký tài khoản, đăng nhập, đăng xuất
+- [x] Phân quyền người dùng (xóa người dùng với quyền admin)
+- [x] Đổi ảnh đại diện, sửa thông tin người dùng
+- [x] Đổi mật khẩu
+- [ ] Tìm kiếm phim theo tên
+- [x] Xem thông tin và trailer phim
+- [ ] Đặt vé
 
 ### Các công nghệ sử dụng
 
--   ReactJS
--   Styled Components
--   react-router-dom
+- ReactJS
+- Styled Components
+- react-router-dom

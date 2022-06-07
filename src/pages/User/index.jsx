@@ -75,11 +75,11 @@ const User = () => {
                                 <div className="item-left">
                                     <div class="profile-pic" onClick={handleChangeImage}>
                                         <label class="-label" for="file">
-                                            <span>Change Image</span>
+                                            <span>Đổi ảnh</span>
                                         </label>
-                                        <img className="ava" src={require(`../../images/${currentUser.image}`)} alt="profile" id="output" width="200" />
+                                        <img className="ava" src={require(`../../images/${currentUser.image}`)} alt="profile" id="output" width="300" />
                                     </div>
-                                    <h1>{currentUser.username}</h1>
+                                    <h1 style={{marginTop: 10}}>{currentUser.username}</h1>
                                 </div>
                                 <div className="item-right">
                                     {showChangeImages && (
@@ -87,7 +87,7 @@ const User = () => {
                                             <div className="images-header">
                                                 <h2>CHỌN ẢNH ĐẠI DIỆN</h2>
                                                 <div className="exit" onClick={() => setShowChangeImages(false)}>
-                                                    <GiCancel />
+                                                    <GiCancel fontSize={"30px"} />
                                                 </div>
                                             </div>
                                             <div className="image-row">
@@ -114,11 +114,11 @@ const User = () => {
                                             </div>
                                         </div>
                                     )}
-                                    {!showChangeImages && (<div><h1 style={{ margin: "15px" }}>Thông tin người dùng</h1>
+                                    {!showChangeImages && (<div style={{width: "100%"}}><h1 style={{ margin: "15px", textAlign:"center" }}>Thông tin người dùng</h1>
                                         <UserInfo user={currentUser} />
                                         <div className="btn-group">
-                                            <SButton style={{ width: 100, height: 40, fontSize: 12 }} onClick={handleEdit}>Sửa thông tin</SButton>
-                                            <SButton style={{ width: 100, height: 40, fontSize: 12 }} onClick={handleChangePassword}>Đổi mật khẩu</SButton>
+                                            <SButton style={{ width: 200, height: 60, fontSize: 23, marginBottom: 20, marginRight: 20 }} onClick={handleEdit}>Sửa thông tin</SButton>
+                                            <SButton style={{ width: 200, height: 60, fontSize: 23, marginBottom: 20 }} onClick={handleChangePassword}>Đổi mật khẩu</SButton>
                                         </div></div>)}
                                 </div>
                             </>)}

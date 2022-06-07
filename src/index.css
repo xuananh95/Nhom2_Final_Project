@@ -6,6 +6,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html {
+    font-size: 100%;
+}
+
 body{
     /* background: black; */
     background-image:url('https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/movie-details-bg.jpg') ;
@@ -36,7 +40,7 @@ body{
   margin-right: -4px;
 }
 
-.row.no-gutters {
+/* .row.no-gutters {
   margin-left: 0;
   margin-right: 0;
 }
@@ -160,7 +164,7 @@ body{
 }
 
 /* >= Tablet */
-@media (min-width: 740px) {
+/* @media (min-width: 740px) {
   .row {
       margin-left: -8px;
       margin-right: -8px;
@@ -293,7 +297,7 @@ body{
   .m-o-11 {
       margin-left: 91.66667%;
   }
-}
+} */ 
 
 /* PC medium resolution > */
 @media (min-width: 1113px) {
@@ -449,6 +453,9 @@ body{
 
 /* Tablet - PC low resolution */
 @media (min-width: 740px) and (max-width: 1023px) {
+    html{
+        font-size: 12px;
+    }
   .wide {
       width: 644px;
   }

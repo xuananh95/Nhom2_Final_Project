@@ -38,6 +38,8 @@ const SignIn = () => {
             return;
         }
         toast.success('Đăng nhập thành công!!!');
+        const newUsers = users.map(user => user.id === findUser.id ? {...user, lastSignedInAt: new Date()} : user);
+        localStorage.setItem('users', JSON.stringify(newUsers));
         localStorage.setItem('currentUser', JSON.stringify(findUser));
         navigate('../', { replace: true });
     }
@@ -45,15 +47,18 @@ const SignIn = () => {
     
 
     return (
-        <SForm onSubmit={handleSubmit}>
-            <h1 className="text">Sign in</h1>
-            <Input label="Tên đăng nhập" value={username} onChange={(e) => setUser({ ...user, username: e.target.value })} el={(<FaUserAlt color="black" style={{marginRight:"10px"}} />)} />
-            <Input label="Mật khẩu" value={password} onChange={(e) => setUser({ ...user, password: e.target.value })} inputType="password" el={(<RiLockPasswordFill color="black" style={{marginRight:"10px"}} />)}  />
-            <Link to="/sign-up">Chưa có tài khoản? Tạo mới ngay!</Link>
-            <div className="button-group">
-                <Button text="Đăng nhập" color="blue" action={handleSubmit} />
-            </div>
-        </SForm>
+        <div className="signup-container" style={{width: '100%', display: 'flex', justifyContent:'center', alignItems:'center', marginTop: '20px'}}>
+            <SForm onSubmit={handleSubmit}>
+                <h1 className="text">Sign in</h1>
+                <Input label="Tên đăng nhập" value={username} onChange={(e) => setUser({ ...user, username: e.target.value })} el={(<FaUserAlt color="white" style={{marginRight:"10px"}} />)} />
+                <Input label="Mật khẩu" value={password} onChange={(e) => setUser({ ...user, password: e.target.value })} inputType="password" el={(<RiLockPasswordFill color="white" style={{marginRight:"10px"}} />)}  />
+                <Link to="/sign-up">Chưa có tài khoản? Tạo mới ngay!</Link>
+                <div className="button-group">
+                    <Button text="Đăng nhập" color="blue" action={handleSubmit} />
+                </div>
+            </SForm>
+        </div>
+        
     )
 }
 

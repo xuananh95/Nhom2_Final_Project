@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import UserItem from './UserItem';
 import { SAdmin } from './styles';
+import {AiOutlineUnorderedList} from 'react-icons/ai'
 
 const Admin = () => {
     const [currentUser, setCurrentUser] = useState(null);
@@ -33,7 +34,13 @@ const Admin = () => {
 
     return (
         <SAdmin>
-            <h1>Danh sách người dùng</h1>
+            <div className="admin-page-title"><AiOutlineUnorderedList className="admin-logo" />Danh sách người dùng</div>
+            <div className="user-item-header">
+                <div>Tên người dùng</div>
+                <div>Được tạo lúc</div>
+                <div>Lần cuối đăng nhập</div>
+                <div>Xóa</div>
+            </div>
             {users.length > 1 
                 ? users.filter(user => user.isAdmin === false)
                         .map(user=>(<UserItem key={user.id} user={user} handleDelete={handleDelete} />)) 

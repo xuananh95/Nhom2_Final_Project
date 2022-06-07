@@ -4,14 +4,16 @@ export const SEditUserModal = styled.form`
   margin: 0 auto;
   margin-top: 20px;
   width: 100%;
-  max-width: 700px;
-  background-color: white;
+  max-width: 850px;
+  /* background-color: white; */
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: black;
+  /* color: black; */
   border-radius: 5px;
   padding: 20px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
   .edit-info {
     width: 80%;
     max-width: 700px;
@@ -20,13 +22,14 @@ export const SEditUserModal = styled.form`
     flex-direction: column;
     h1 {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
     .info-row {
       margin-top: 5px;
       display: flex;
       flex-direction: row;
       align-items: center;
+      font-size: 1.5rem;
       .info-row-title {
         flex: 1;
         font-weight: bold;
@@ -44,6 +47,7 @@ export const SEditUserModal = styled.form`
           border-radius: 5px;
           width: 100%;
           margin: 5px;
+          font-size: 1.5rem;
         }
       }
     }
@@ -52,6 +56,12 @@ export const SEditUserModal = styled.form`
       display: flex;
       flex-direction: row;
       justify-content: center;
+      button {
+        width: 150px;
+        height: 50px;
+        font-size: 1.5rem;
+        margin-left: 5px;
+      }
     }
   }
 `;
