@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {MdOutlineFeaturedPlayList} from 'react-icons/md'
+import {TiInputChecked} from 'react-icons/ti'
 
 const Feature = () => {
   const feature = ['Đăng ký tài khoản, đăng nhập, đăng xuất','Phân quyền người dùng','Tìm kiếm phim theo tên','Xem thông tin và trailer phim','Đặt vé']
@@ -8,10 +9,10 @@ const Feature = () => {
     <About>
       <div className='feature-container'>
         <h2 style={{textAlign: 'center', color: 'rgb(55, 120, 232)'}}>Website mua vé xem phim TICKETS</h2>
-        <h4><MdOutlineFeaturedPlayList/> Các tính năng chính của website: </h4>
         <div className='feature'>
+        <h4 style={{fontSize:'20px'}}><MdOutlineFeaturedPlayList/> Các tính năng chính của website: </h4>
           <ul>
-            {feature.map(f => <li>{f}</li>)}
+            {feature.map(f => <li><TiInputChecked/> {f}</li>)}
           </ul>
         </div>
         <p className='school-name'>@MindX Code Intensive 74</p>
@@ -45,7 +46,14 @@ const About = styled.div`
     }
 
     .feature > ul {
+      padding-top: 10px;
       padding-left: 1.5em;
+    }
+
+    .feature > ul > li {
+      list-style-type: none;
+      font-size: 19px;
+      padding-top: 5px;
     }
 
     .school-name {
