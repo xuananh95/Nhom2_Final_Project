@@ -9,10 +9,10 @@ import "react-toastify/dist/ReactToastify.css";
 import Admin from "./pages/Admin";
 import User from "./pages/User";
 import AboutUs from "./pages/Aboutus";
-import Cinema from "./pages/Cinema";
 import Movie from "./components/Movie";
 import Info from "./pages/Info";
 import Home from "./pages/Home/data";
+import Feature from "./pages/Feature";
 
 export const dataContext = createContext("");
 
@@ -29,7 +29,7 @@ function App() {
                             <Route path="/admin" element={<Admin />} />
                             <Route path="/user" element={<User />} />
                             <Route path="/about-us" element={<AboutUs />} />
-                            <Route path="cinema" element={<Cinema />} />
+                            <Route path="/feature" element={<Feature />} />
                             <Route path="/info" element={<Info />} />
                         </Routes>
                     </Layout>
