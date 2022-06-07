@@ -1,21 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import {RiTeamFill} from 'react-icons/ri'
-import {GiCharacter} from 'react-icons/gi'
+import {MdOutlineFeaturedPlayList} from 'react-icons/md'
 
-const AboutUs = () => {
+const Feature = () => {
+  const feature = ['Đăng ký tài khoản, đăng nhập, đăng xuất','Phân quyền người dùng','Tìm kiếm phim theo tên','Xem thông tin và trailer phim','Đặt vé']
   return (
     <About>
-      <div className='about-container'>
+      <div className='feature-container'>
         <h2 style={{textAlign: 'center', color: 'rgb(55, 120, 232)'}}>Website mua vé xem phim TICKETS</h2>
-        <h4><RiTeamFill/> Tên nhóm: Team 2 (Nhóm 3)</h4>
-        <div className='members'>
-          <h4><GiCharacter/> Thành viên nhóm:</h4>
+        <h4><MdOutlineFeaturedPlayList/> Các tính năng chính của website: </h4>
+        <div className='feature'>
           <ul>
-            <li>Võ Xuân Anh (Leader)</li>
-            <li>Đoàn Minh Đức</li>
-            <li>Hà Xuân Tuấn</li>
-            <li>Hoàng Đức Khánh</li>
+            {feature.map(f => <li>{f}</li>)}
           </ul>
         </div>
         <p className='school-name'>@MindX Code Intensive 74</p>
@@ -24,7 +20,7 @@ const AboutUs = () => {
   )
 }
 
-export default AboutUs
+export default Feature
 
 const About = styled.div`
     padding: 1em;
@@ -35,7 +31,7 @@ const About = styled.div`
     min-height: 80vh;
     color: black;
 
-    .about-container {
+    .feature-container {
       position: relative;
       display: flex;
       flex-direction: column;
@@ -48,7 +44,7 @@ const About = styled.div`
       padding-bottom: 2em;
     }
 
-    .members > ul {
+    .feature > ul {
       padding-left: 1.5em;
     }
 
