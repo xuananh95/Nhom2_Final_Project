@@ -24,6 +24,19 @@ useEffect(() => {
         setcount(fc);
     },[])
     const handlePay = (e) => {
+        const usersbooked = localStorage.getItem('usersbooked') ? JSON.parse(localStorage.getItem('usersbooked')) : [];
+        const idTicket = uuidv4();
+        const nameFilm=movieItem.original_title;
+        const price=count*70000;
+        const date= new Date();
+        const newUser = {
+            price,
+            count,
+            idTicket,
+            nameFilm,
+            date,
+        }
+        localStorage.setItem('usersbooked', JSON.stringify([...usersbooked, newUser]));
         toast.success('Movie order successfully!!!');
     }
   const handleIncreaseCount = () => {
@@ -37,12 +50,6 @@ useEffect(() => {
     setcount(a);
     localStorage.setItem("count",a);
   }
-  const id = uuidv4();
-        const newUser = {
-            id,
-            image: 'default.jpg',
-            // name: {movieItem.original_title}
-        }
 
   return (
     <SBooking>

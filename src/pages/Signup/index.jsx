@@ -125,7 +125,6 @@ export const SForm = styled.form`
     .button-group{
         display: flex;
         justify-content: center;
-<<<<<<< HEAD
         margin-top: 25px;
         button {            
             width: 150px;
@@ -133,8 +132,5 @@ export const SForm = styled.form`
             font-size: 1.5rem;
             margin-bottom: 15px;
         }
-=======
-        margin-top: 20px;
->>>>>>> fd48fb0555e1f3eb5537fc722cd1036dc1a4dcbe
     }
 `;
