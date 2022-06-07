@@ -8,9 +8,9 @@ const AboutUs = () => {
     <About>
       <div className='about-container'>
         <h2 style={{textAlign: 'center', color: 'rgb(55, 120, 232)'}}>Website mua vé xem phim TICKETS</h2>
-        <h4><RiTeamFill/> Tên nhóm: Team 2 (Nhóm 3)</h4>
+        <h4 style={{fontSize:'21px'}}><RiTeamFill/> Tên nhóm: Team 2 (Nhóm 3)</h4>
         <div className='members'>
-          <h4><GiCharacter/> Thành viên nhóm:</h4>
+          <h4 style={{fontSize:'20px'}}><GiCharacter/> Thành viên nhóm:</h4>
           <ul>
             <li>Võ Xuân Anh (Leader)</li>
             <li>Đoàn Minh Đức</li>
@@ -50,6 +50,11 @@ const About = styled.div`
 
     .members > ul {
       padding-left: 1.5em;
+    }
+
+    .members > ul > li {
+      font-size: 18px;
+      padding-top: 10px;
     }
 
     .school-name {
