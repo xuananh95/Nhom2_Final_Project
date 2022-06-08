@@ -29,7 +29,7 @@ const Info = () => {
   const [locationKey, setLocationKey] = useState(location.key)
   useEffect(() => {
     setLocationKey(location.key)
-    console.log(locationKey)
+    // console.log(locationKey)
   }, [location.key])
   // ---------------------------------
 

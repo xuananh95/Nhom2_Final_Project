@@ -13,7 +13,6 @@ const Header = () => {
   const [data, setData] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [searchInput, setSearchInput] = useState('')
-  console.log(data)
   let activeStyle = {
     color: "rgb(167, 196, 245)",
   }

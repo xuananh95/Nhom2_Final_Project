@@ -50,7 +50,6 @@ const Signup = () => {
             toast.error('Mật khẩu không trùng khớp!');
             return;
         }
-        console.log('a', checkExistedUser(username));
         if (checkExistedUser(username)){
             toast.error('Tên người dùng đã tồn tại!');
             return;

@@ -34,7 +34,6 @@ const User = () => {
             setUsers(usersLocal);
         }
     }, [showUserInfo])
-    console.log(currentUser);
 
     const handleEdit = () => {
         setShowEditUser(true);
@@ -73,8 +72,8 @@ const User = () => {
                         {showUserInfo &&
                             (<>
                                 <div className="item-left">
-                                    <div class="profile-pic" onClick={handleChangeImage}>
-                                        <label class="-label" for="file">
+                                    <div className="profile-pic" onClick={handleChangeImage}>
+                                        <label className="-label">
                                             <span>Đổi ảnh</span>
                                         </label>
                                         <img className="ava" src={require(`../../images/${currentUser.image}`)} alt="profile" id="output" width="300" />
