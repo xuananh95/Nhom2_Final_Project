@@ -35,7 +35,7 @@ const Header = () => {
   const handleLogout = () => {
     localStorage.removeItem('currentUser');
     navigate('../sign-in', {replace: true});
-    toast.success('Log out successful!');
+    toast.success('Đăng xuất thành công!');
   }
 
   const handleSearch = (e) => {
