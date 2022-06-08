@@ -4,9 +4,6 @@ import { SUserHistory } from './styles'
 const UserHistory = () => {
   const orders = localStorage.getItem('usersbooked') ? JSON.parse(localStorage.getItem('usersbooked')) : [];
   const userId = JSON.parse(localStorage.getItem('currentUser')).id;
-  console.log('orders', orders);
-  console.log('userid', userId);
-  console.log(orders[0].userId === userId);
   return (
     <SUserHistory>
       <div className="history-flex-row history-header">
