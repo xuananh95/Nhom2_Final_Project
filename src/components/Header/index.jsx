@@ -74,6 +74,7 @@ const Header = () => {
         <div className='header-menu header-units'>
           <ImMenu3/>
           <div className='dropdown-menu'>
+            <Link to='/Allfilm'>Tất cả phim</Link>
             <Link to='/about-us'>Về chúng tôi</Link>
             <Link to='/feature'>Các tính năng</Link>
           </div>
@@ -94,6 +95,7 @@ const Header = () => {
         {currentUser ? (
           <div className="header-account header-units">
             {(currentUser.isAdmin && (
+<<<<<<< HEAD
                 <NavLink className="account-link" style={({isActive}) => 
                   isActive ? activeStyle : undefined} to="/admin">(Administrator)
                 </NavLink>
@@ -102,6 +104,16 @@ const Header = () => {
                   isActive ? activeStyle : undefined} to="/user">Xin chào {currentUser.username}!
             </NavLink>
             <button className="account-link logout-btn" onClick={handleLogout}>Đăng xuất</button>
+=======
+                <NavLink className='inaccount-link' style={({isActive}) => 
+                  isActive ? activeStyle : undefined} to="/admin">(Administrator)
+                </NavLink>
+            ))}
+            <NavLink className='inaccount-link' style={({isActive}) => 
+                  isActive ? activeStyle : undefined} to="/user">Xin chào {currentUser.username}!
+            </NavLink>
+            <button className='inaccount-link' onClick={handleLogout}>Đăng xuất</button>
+>>>>>>> khanh
           </div>
         ) : ( 
           <div className="header-account header-units">

@@ -177,6 +177,6 @@
     font-size: 16px;
 }
 
-.logout-btn {
-    cursor: pointer;
+.inaccount-link:hover {
+    color: rgb(167, 196, 245);
 }
