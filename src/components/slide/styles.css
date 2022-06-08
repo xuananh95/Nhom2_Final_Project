@@ -27,6 +27,7 @@
 }
 .wrap_slider_slick{
     height: 710px;
+    width: 100%;
 }
 .wrap_slider_slick .slick-slider{
     width: 100%;

@@ -1,0 +1,15 @@
+.wrap_error{
+    display: flex;
+    flex-direction: column;
+    margin: 100px 0 0 250px;
+}
+.wrap_error .image{
+    height: 50px;
+    width: 50px;
+    margin-bottom: 20px;
+}
+.reload_web{
+   
+    margin-top: 15px;
+    border-radius: 5px;
+}
