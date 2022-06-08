@@ -25,7 +25,7 @@ const UserHistory = () => {
         <div className="history-flex-item item-4">Tổng tiền</div>
         <div className="history-flex-item item-5">Ngày đặt</div>
       </div>
-      {orders && orders.filter(item => item.userId === userId).map(item => (
+      {orders.length ? (orders.filter(item => item.userId === userId).map(item => (
         <div className="history-flex-row" key={item.idTicket}>
           <div className="history-flex-item item-1">{item.idTicket.slice(0, 8)}</div>
           <div className="history-flex-item item-2" onClick={() => handleCheckFilm(item.nameFilm)}>{item.nameFilm}</div>
@@ -33,7 +33,7 @@ const UserHistory = () => {
           <div className="history-flex-item item-4">{item.price.toLocaleString('en')} VND</div>
           <div className="history-flex-item item-5">{item.date.slice(0, 10).split("-").reverse().join("-")}</div>
         </div>
-      ))}
+      ))): <p style={{padding:'2rem'}}>Bạn chưa đặt vé...</p>}
     
     </SUserHistory>
   )
