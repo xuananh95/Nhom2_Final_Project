@@ -41,6 +41,7 @@
     margin: 25px 0;
 }
 .content{
+    margin-left: 5px;
     color: #3778e8;
 }
 .avatar-cast{
@@ -64,12 +65,17 @@
     border: none;
     background: #3778e8;
     color: #fff;
-    width: 100px;
-    height: 36px;
-    line-height: 36px;
+    width: 120px;
+    height: 40px;
+    line-height: 31px;
     text-align: center;
     border-radius: 10px;
     cursor: pointer;
+    padding: 5px;
+}
+.product-BooKing:hover{
+    transform: scale(1.2);
+    color: rgb(85, 255, 85);
 }
 .review{
     margin-top: 75px;

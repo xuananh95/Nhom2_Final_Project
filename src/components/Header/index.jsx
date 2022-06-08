@@ -94,14 +94,14 @@ const Header = () => {
         {currentUser ? (
           <div className="header-account header-units">
             {(currentUser.isAdmin && (
-                <NavLink style={({isActive}) => 
+                <NavLink className="account-link" style={({isActive}) => 
                   isActive ? activeStyle : undefined} to="/admin">(Administrator)
                 </NavLink>
             ))}
-            <NavLink style={({isActive}) => 
+            <NavLink className="account-link" style={({isActive}) => 
                   isActive ? activeStyle : undefined} to="/user">Xin chào {currentUser.username}!
             </NavLink>
-            <button onClick={handleLogout}>Đăng xuất</button>
+            <button className="account-link logout-btn" onClick={handleLogout}>Đăng xuất</button>
           </div>
         ) : ( 
           <div className="header-account header-units">
