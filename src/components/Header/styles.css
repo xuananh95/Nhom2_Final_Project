@@ -79,9 +79,27 @@
     scale: 1;
 }
 
+@keyframes displaying {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+@keyframes undisplaying {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+
 .header-search {
     cursor: pointer;
     display: flex;
+    align-items: center;
     position: relative;
     color: white;
     font-size: 20px;
@@ -89,6 +107,12 @@
 
 .header-search:hover {
     color: rgb(167, 196, 245);
+}
+
+.header-search > form {
+    /* transition: all 0.2s ease; */
+    float: left;
+    transform-origin: 0% 50%;
 }
 
 .header-search > form > input {
