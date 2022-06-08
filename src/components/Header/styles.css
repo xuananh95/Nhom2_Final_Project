@@ -46,7 +46,7 @@
     top: 62px;
     left: -25px;
     background-color: whitesmoke;
-    display: none;
+    display: flex;
     flex-direction: column;
     width: 150px;
     height: fit-content;
@@ -55,7 +55,11 @@
     border: 1px solid rgb(50, 50, 50);
     gap: 8px;
     font-size: 17px;
-    scale: 0;
+    transform: scale(0);
+    animation: displaying 0.2s;
+    transition: all 0.2s ease;
+    float: top;
+    transform-origin: 50% 0%;
     z-index: 11;
 }
 
@@ -75,8 +79,7 @@
 }
 
 .header-menu:hover > .dropdown-menu {
-    display: flex;
-    scale: 1;
+    transform: scale(1);
 }
 
 @keyframes displaying {
@@ -110,8 +113,7 @@
 }
 
 .header-search > form {
-    /* transition: all 0.2s ease; */
-    float: left;
+    /* float: left; */
     transform-origin: 0% 50%;
 }
 
