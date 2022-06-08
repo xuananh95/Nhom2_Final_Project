@@ -9,7 +9,7 @@ export const SUser = styled.div`
     margin: 0 auto;
     margin-top: 20px;
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     background-color: rgba(9, 11, 16, 0.8);
     color: white;
     border: 1px solid rgb(55, 120, 232);
