@@ -14,7 +14,7 @@ const Trailer = ({setCheck,idMovie,check}) => {
       const data=await fetch(`https://api.themoviedb.org/3/movie/${idMovie}?api_key=61349b2f1730137c30a1c9d2f3fa8d68&append_to_response=videos`)
       const trailerData=await data.json()
       const dataTrailer=trailerData.videos.results.find(video=>{
-         return video.name=='Official Trailer'
+         return video.name.includes('Official')&&video.name.includes('Trailer')
       })
       setTrailer(dataTrailer)
     }
