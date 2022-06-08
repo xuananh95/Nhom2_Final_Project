@@ -17,7 +17,7 @@ const UserInfo = ({ user }) => {
             </div>
             <div className="info-row">
                 <span className="info-row-title"><FaBirthdayCake color="white" style={{ marginRight: "10px" }} />Ngày sinh: </span>
-                <span className="info-row-value">{user.dob}</span>
+                <span className="info-row-value">{user.dob.split("-").reverse().join("-")}</span>
             </div>
             <div className="info-row">
                 <span className="info-row-title"><FaPhoneSquareAlt color="white" style={{ marginRight: "10px" }} />Số điện thoại: </span>
