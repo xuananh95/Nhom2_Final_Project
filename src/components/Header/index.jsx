@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import './styles.css'
 import styled from 'styled-components'
 import { toast } from 'react-toastify';
-import {BsSearch} from 'react-icons/bs'
-import {IoCloseSharp} from 'react-icons/io5'
-import {ImMenu3} from 'react-icons/im'
-import {GiPopcorn} from 'react-icons/gi'
+import { BsSearch } from 'react-icons/bs'
+import { IoCloseSharp } from 'react-icons/io5'
+import { ImMenu3 } from 'react-icons/im'
+import { GiPopcorn } from 'react-icons/gi'
 
 const Header = () => {
   const [searchDisplay, setSearchDisplay] = useState(false);
@@ -34,20 +34,20 @@ const Header = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('currentUser');
-    navigate('../sign-in', {replace: true});
+    navigate('../sign-in', { replace: true });
     toast.success('Đăng xuất thành công!');
   }
 
   const handleSearch = (e) => {
     setSearchInput(e.target.value)
-    if(e.target.value.length > 0) {
+    if (e.target.value.length > 0) {
       setSearchResults(data.filter((d) => {
-        if(d.title.toLowerCase().includes(e.target.value.toLowerCase()) || d.tagline.toLowerCase().includes(e.target.value.toLowerCase())) {return d}
+        if (d.title.toLowerCase().includes(e.target.value.toLowerCase()) || d.tagline.toLowerCase().includes(e.target.value.toLowerCase())) { return d }
       }))
-    } else {setSearchResults([])}
+    } else { setSearchResults([]) }
   }
 
-  const image_path='https://image.tmdb.org/t/p/w500'
+  const image_path = 'https://image.tmdb.org/t/p/w500'
   const showSearch = () => {
     return searchResults.map((d) => {
       const handleClick = () => {
@@ -56,11 +56,11 @@ const Header = () => {
         localStorage.setItem('itemInfo', JSON.stringify(d))
         navigate('/info')
       }
-      return <li key={d.id} className='search-list' onClick={handleClick} style={{display: 'flex', gap: '5px'}}>
-        <img src={image_path + d.poster_path} style={{width:'20%', height:'auto'}}></img>
-        <div style={{width: '80%'}}>
-          <h5 style={{color: 'rgb(55, 120, 232)'}}>{d.title}</h5>
-          <small style={{color: 'gray'}}>{d.tagline}</small>
+      return <li key={d.id} className='search-list' onClick={handleClick} style={{ display: 'flex', gap: '5px' }}>
+        <img src={image_path + d.poster_path} style={{ width: '20%', height: 'auto' }}></img>
+        <div style={{ width: '80%' }}>
+          <h5 style={{ color: 'rgb(55, 120, 232)' }}>{d.title}</h5>
+          <small style={{ color: 'gray' }}>{d.tagline}</small>
         </div>
       </li>
     })
@@ -68,59 +68,48 @@ const Header = () => {
 
   return (
     <div className='header'>
-        <div className='header-logo header-units'>
-          <Link to='/'><GiPopcorn/>tickets</Link>
+      <div className='header-logo header-units'>
+        <Link to='/'><GiPopcorn />tickets</Link>
+      </div>
+      <div className='header-menu header-units'>
+        <ImMenu3 />
+        <div className='dropdown-menu'>
+          <Link to='/Allfilm'>Tất cả phim</Link>
+          <Link to='/about-us'>Về chúng tôi</Link>
+          <Link to='/feature'>Các tính năng</Link>
         </div>
-        <div className='header-menu header-units'>
-          <ImMenu3/>
-          <div className='dropdown-menu'>
-            <Link to='/Allfilm'>Tất cả phim</Link>
-            <Link to='/about-us'>Về chúng tôi</Link>
-            <Link to='/feature'>Các tính năng</Link>
-          </div>
-        </div>
-        <div className='header-search header-units'>
-          <div style={{transform:`scale(${searchDisplay?0:1})`}} onClick={() => setSearchDisplay(!searchDisplay)}><BsSearch/></div>
-          <form style={{position: 'relative', transform: `scale(${searchDisplay?1:0})`, animation: `${searchDisplay?'displaying':'undisplaying'} 0.3s`}}>
-            <input type='search' placeholder='Tìm kiếm' value={searchInput} onChange={(e) => handleSearch(e)}></input>
-            <button onClick={(e) => {e.preventDefault(); setSearchDisplay(!searchDisplay); setSearchInput(''); setSearchResults([])}}><IoCloseSharp/></button>
-            {searchResults.length > 0 ? (
+      </div>
+      <div className='header-search header-units'>
+        <div style={{ transform: `scale(${searchDisplay ? 0 : 1})` }} onClick={() => setSearchDisplay(!searchDisplay)}><BsSearch /></div>
+        <form style={{ position: 'relative', transform: `scale(${searchDisplay ? 1 : 0})`, animation: `${searchDisplay ? 'displaying' : 'undisplaying'} 0.3s` }}>
+          <input type='search' placeholder='Tìm kiếm' value={searchInput} onChange={(e) => handleSearch(e)}></input>
+          <button onClick={(e) => { e.preventDefault(); setSearchDisplay(!searchDisplay); setSearchInput(''); setSearchResults([]) }}><IoCloseSharp /></button>
+          {searchResults.length > 0 ? (
             <SearchDropdown className='search-dropdown'>
               <ul>{showSearch()}</ul>
             </SearchDropdown>
-            ) : null}
-          </form>
+          ) : null}
+        </form>
+      </div>
+      <div style={{ width: '100%' }}> </div>
+      {currentUser ? (
+        <div className="header-account header-units">
+          {(currentUser.isAdmin && (
+            <NavLink className='inaccount-link' style={({ isActive }) =>
+              isActive ? activeStyle : undefined} to="/admin">(Administrator)
+            </NavLink>
+          ))}
+          <NavLink className='inaccount-link' style={({ isActive }) =>
+            isActive ? activeStyle : undefined} to="/user">Xin chào {currentUser.username}!
+          </NavLink>
+          <button className='inaccount-link' onClick={handleLogout}>Đăng xuất</button>
         </div>
-        <div style={{width: '100%'}}> </div>
-        {currentUser ? (
-          <div className="header-account header-units">
-            {(currentUser.isAdmin && (
-<<<<<<< HEAD
-                <NavLink className="account-link" style={({isActive}) => 
-                  isActive ? activeStyle : undefined} to="/admin">(Administrator)
-                </NavLink>
-            ))}
-            <NavLink className="account-link" style={({isActive}) => 
-                  isActive ? activeStyle : undefined} to="/user">Xin chào {currentUser.username}!
-            </NavLink>
-            <button className="account-link logout-btn" onClick={handleLogout}>Đăng xuất</button>
-=======
-                <NavLink className='inaccount-link' style={({isActive}) => 
-                  isActive ? activeStyle : undefined} to="/admin">(Administrator)
-                </NavLink>
-            ))}
-            <NavLink className='inaccount-link' style={({isActive}) => 
-                  isActive ? activeStyle : undefined} to="/user">Xin chào {currentUser.username}!
-            </NavLink>
-            <button className='inaccount-link' onClick={handleLogout}>Đăng xuất</button>
->>>>>>> khanh
-          </div>
-        ) : ( 
-          <div className="header-account header-units">
-            <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-up" className='account-link'>Đăng ký</NavLink>
-            <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-in" className='account-link sign-up-link'>Đăng nhập</NavLink>
-          </div>      
-        ) 
+      ) : (
+        <div className="header-account header-units">
+          <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-up" className='account-link'>Đăng ký</NavLink>
+          <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} to="/sign-in" className='account-link sign-up-link'>Đăng nhập</NavLink>
+        </div>
+      )
       }
     </div>
   )
