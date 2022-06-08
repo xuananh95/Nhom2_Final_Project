@@ -4,7 +4,7 @@ import {MdOutlineFeaturedPlayList} from 'react-icons/md'
 import {TiInputChecked} from 'react-icons/ti'
 
 const Feature = () => {
-  const feature = ['Đăng ký tài khoản, đăng nhập, đăng xuất','Phân quyền người dùng','Tìm kiếm phim theo tên','Xem thông tin và trailer phim','Đặt vé']
+  const feature = ['Đăng ký tài khoản, đăng nhập, đăng xuất','Phân quyền người dùng','Tìm kiếm phim theo tên','Xem thông tin và trailer phim','Đặt vé', 'Đổi ảnh đại diện, sửa thông tin người dùng']
   return (
     <About>
       <div className='feature-container'>

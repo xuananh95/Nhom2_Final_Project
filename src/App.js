@@ -14,6 +14,7 @@ import Home from "./pages/Home/data";
 import Error_404 from "./pages/Error_404";
 import Booking from "./pages/Booking";
 import Feature from "./pages/Feature";
+import Allfilm from "./pages/Allfilm";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/info" element={<Info />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="*" element={<Error_404 />} />
+            <Route path='/allfilm' element={<Allfilm />} />
           </Routes>
         </Layout>
       </BrowserRouter>

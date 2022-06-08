@@ -74,6 +74,7 @@ const Header = () => {
         <div className='header-menu header-units'>
           <ImMenu3/>
           <div className='dropdown-menu'>
+            <Link to='/Allfilm'>Tất cả phim</Link>
             <Link to='/about-us'>Về chúng tôi</Link>
             <Link to='/feature'>Các tính năng</Link>
           </div>
