@@ -15,6 +15,7 @@ export const SAdmin = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 1rem;
+  background-image: linear-gradient(to right, rgb(5, 10, 14, 0.8), rgb(23, 39, 61, 0.9));
   .admin-page-title {
     display: flex;
     flex-direction: row;
@@ -32,11 +33,12 @@ export const SAdmin = styled.div`
     grid-template-columns: 3fr 3fr 3fr 1fr;
     width: 100%;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
+    color: rgb(55, 120, 232);
     border-radius: 5px;
     padding-bottom: 20px;
     margin-bottom: 10px;
-    border-bottom: 1px solid rgb(55, 120, 232);
+    border-bottom: 1px solid rgb(23, 39, 61);
   }
 `;

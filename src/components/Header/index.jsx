@@ -79,16 +79,16 @@ const Header = () => {
           </div>
         </div>
         <div className='header-search header-units'>
-          {!searchDisplay ? <div onClick={() => setSearchDisplay(!searchDisplay)}><BsSearch/></div> : (
-          <form style={{position: 'relative'}}>
+          <div style={{transform:`scale(${searchDisplay?0:1})`}} onClick={() => setSearchDisplay(!searchDisplay)}><BsSearch/></div>
+          <form style={{position: 'relative', transform: `scale(${searchDisplay?1:0})`, animation: `${searchDisplay?'displaying':'undisplaying'} 0.3s`}}>
             <input type='search' placeholder='Tìm kiếm' value={searchInput} onChange={(e) => handleSearch(e)}></input>
-            <button onClick={() => {setSearchDisplay(!searchDisplay); setSearchInput(''); setSearchResults([])}}><IoCloseSharp/></button>
+            <button onClick={(e) => {e.preventDefault(); setSearchDisplay(!searchDisplay); setSearchInput(''); setSearchResults([])}}><IoCloseSharp/></button>
             {searchResults.length > 0 ? (
             <SearchDropdown className='search-dropdown'>
               <ul>{showSearch()}</ul>
             </SearchDropdown>
             ) : null}
-          </form>)}
+          </form>
         </div>
         <div style={{width: '100%'}}> </div>
         {currentUser ? (
