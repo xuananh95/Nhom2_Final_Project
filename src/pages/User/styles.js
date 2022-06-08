@@ -9,7 +9,7 @@ export const SUser = styled.div`
     margin: 0 auto;
     margin-top: 20px;
     width: 100%;
-    max-width: 1000px;
+    max-width: 800px;
     background-color: rgba(9, 11, 16, 0.8);
     color: white;
     border: 1px solid rgb(55, 120, 232);
@@ -79,7 +79,7 @@ export const SUser = styled.div`
       justify-content: center;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1rem;
       .btn-group {
         width: 100%;
         margin-top: 25px;
@@ -159,7 +159,7 @@ export const SUser = styled.div`
     text-align: center;
     background-color: rgba(9, 11, 16, 0.8);
     padding: 10px;
-    font-size: 1.5rem;
-    margin-bottom: 45px;
+    font-size: 1rem;
+    margin-bottom: 25px;
   }
 `;

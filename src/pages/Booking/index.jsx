@@ -8,15 +8,14 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Booking = () => {
     const image_path='https://image.tmdb.org/t/p/w500'
-    const [carts, setCarts] = useState([]);
-    const movieItem=JSON.parse(localStorage.getItem('itemBook'))
-const navigate = useNavigate();
-useEffect(() => {
-    const current = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')) : null;
-    if(!current){
-        navigate('../sign-in', {replace: true});
-        toast.error('Bạn cần phải đăng nhập trước!');
-        return;
+    const movieItem=JSON.parse(localStorage.getItem('itemInfo'))
+    const navigate = useNavigate();
+    useEffect(() => {
+      const current = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')) : null;
+      if(!current){
+          navigate('../sign-in', {replace: true});
+          toast.error('Bạn cần phải đăng nhập trước!');
+          return;
     }})
     const [count,setcount] =useState(0);
     useEffect(() =>{
@@ -24,12 +23,21 @@ useEffect(() => {
         setcount(fc);
     },[])
     const handlePay = (e) => {
+        if (count === 0){
+          toast.error('Vui lòng chọn số lượng vé muốn đặt!');
+          return;
+        }
+        if (!window.confirm("Bạn có chắc chắn muốn đặt vé?")){
+          return;
+        }
+        const userId = JSON.parse(localStorage.getItem('currentUser')).id;
         const usersbooked = localStorage.getItem('usersbooked') ? JSON.parse(localStorage.getItem('usersbooked')) : [];
         const idTicket = uuidv4();
         const nameFilm=movieItem.original_title;
         const price=count*70000;
         const date= new Date();
         const newUser = {
+            userId,
             price,
             count,
             idTicket,
@@ -37,7 +45,9 @@ useEffect(() => {
             date,
         }
         localStorage.setItem('usersbooked', JSON.stringify([...usersbooked, newUser]));
-        toast.success('Movie order successfully!!!');
+        localStorage.setItem('count', 0);
+        toast.success('Đặt vé thành công!!!');
+        navigate('../', {replace: true});
     }
   const handleIncreaseCount = () => {
     const a=count+1;
@@ -46,6 +56,9 @@ useEffect(() => {
   }
     
   const handleDecrease = (id) => {
+    if (count === 0){
+      return;
+    }
     const a=count-1;
     setcount(a);
     localStorage.setItem("count",a);
@@ -53,7 +66,6 @@ useEffect(() => {
 
   return (
     <SBooking>
-      <h1 className="total-carts">Your film is </h1>
       <div className="list-cart">
           <CartItem
             count={count}

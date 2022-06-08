@@ -1,2 +1,9 @@
 import styled from "styled-components";
-export const SBooking = styled.div``;
+export const SBooking = styled.div`
+  .list-cart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+`;

@@ -50,7 +50,6 @@ const Signup = () => {
             toast.error('Mật khẩu không trùng khớp!');
             return;
         }
-        console.log('a', checkExistedUser(username));
         if (checkExistedUser(username)){
             toast.error('Tên người dùng đã tồn tại!');
             return;
@@ -99,13 +98,13 @@ export default Signup
 export const SForm = styled.form`
     background-color: rgba(9, 11, 16, 0.8);
     width: 100%;
-    max-width: 700px;
+    max-width: 600px;
     /* margin: 0 auto; */
     margin-top: 20px;
     padding: 10px 20px;
     border-radius: 5px;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border: 1px solid rgb(55, 120, 232);
     .text{
         text-align: center;
@@ -116,11 +115,11 @@ export const SForm = styled.form`
     }
     input {
         margin-bottom: 10px;
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     a {
         color: white;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .button-group{
         display: flex;
@@ -129,7 +128,7 @@ export const SForm = styled.form`
         button {            
             width: 150px;
             height: 50px;
-            font-size: 1.5rem;
+            font-size: 1rem;
             margin-bottom: 15px;
         }
     }

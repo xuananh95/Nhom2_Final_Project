@@ -13,7 +13,7 @@ export const SEditUserModal = styled.form`
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 20px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   .edit-info {
     width: 80%;
     max-width: 700px;
@@ -29,7 +29,7 @@ export const SEditUserModal = styled.form`
       display: flex;
       flex-direction: row;
       align-items: center;
-      font-size: 1.5rem;
+      font-size: 1rem;
       .info-row-title {
         flex: 1;
         font-weight: bold;
@@ -47,7 +47,7 @@ export const SEditUserModal = styled.form`
           border-radius: 5px;
           width: 100%;
           margin: 5px;
-          font-size: 1.5rem;
+          font-size: 1rem;
         }
       }
     }
@@ -59,7 +59,7 @@ export const SEditUserModal = styled.form`
       button {
         width: 150px;
         height: 50px;
-        font-size: 1.5rem;
+        font-size: 1rem;
         margin-left: 5px;
       }
     }
